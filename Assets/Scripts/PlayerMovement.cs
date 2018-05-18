@@ -32,4 +32,9 @@ public class PlayerMovement : MonoBehaviour {
             _rgdb.AddForce(dir * ForcePower);
         }
     }
+
+    public bool GetButtonDown(string button)
+    {
+        return Input.GetButtonDown(_inputPrefix + button);
+    }
 }
