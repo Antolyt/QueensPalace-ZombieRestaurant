@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WorkStation : MonoBehaviour {
     public bool isProducer = false;
+    public bool isDestructor = false;
     private TimerSphere _timer;
     private bool _timerVis = false;
     public Food.WorkStaitionType type;
@@ -25,13 +26,19 @@ public class WorkStation : MonoBehaviour {
                 if (!_myCarry.HasFood() || !otherCarry.IsEmpty())
                     Debug.LogError("resive failed");
             }
-            else if (_myCarry.HasFood() && otherCarry.IsEmpty())
+            else if (!isDestructor && _myCarry.HasFood() && otherCarry.IsEmpty())
             {
                 otherCarry.GiveFood(_myCarry.GetFood());
                 if (_myCarry.HasFood() || otherCarry.IsEmpty())
                     Debug.LogError("givaway failed");
+                if (!isProducer)
+                {
+                    _timerVis = false;
+                    _timer.gameObject.SetActive(_timerVis);
+                    _timer.SetProgress(_myCarry.GetFoodProgress());
+                }
             }
-            else if (!isProducer && _myCarry.HasFood() && otherCarry.HasFood()) {
+            else if (!isDestructor && !isProducer && _myCarry.HasFood() && otherCarry.HasFood()) {
                 Food buffer = otherCarry.GetFood();
                 otherCarry.GiveFood(_myCarry.GetFood());
                 _myCarry.GiveFood(buffer);
@@ -43,15 +50,18 @@ public class WorkStation : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        _myCarry = this.GetComponent<CarrayObject>();
-        _timer = GetComponentInChildren<TimerSphere>();
-        if (_timer != null)
-            _timer.gameObject.SetActive(_timerVis);
+        _myCarry = GetComponent<CarrayObject>();
+        if (!isProducer)
+        {
+            _timer = GetComponentInChildren<TimerSphere>();
+            if (_timer != null)
+                _timer.gameObject.SetActive(_timerVis);
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (!isProducer && _myCarry.HasFood())
+        if (!isDestructor && !isProducer && _myCarry.HasFood())
         {
             if (_myCarry.GetFoodInfo().state == Food.FoodState.BLACK)
             {
@@ -63,7 +73,14 @@ public class WorkStation : MonoBehaviour {
                 }
             }
             else if (_myCarry.GetFoodInfo().HasReachedTargetState())
+            {
+                if (!_timerVis)
+                {
+                    _timerVis = true;
+                    _timer.gameObject.SetActive(_timerVis);
+                }
                 _timer.StartBlink();
+            }
             else
             {
                 if(!_timerVis)
