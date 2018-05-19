@@ -30,6 +30,16 @@ public class Bullet : MonoBehaviour {
         transform.rotation = Quaternion.FromToRotation(Vector3.up, Dir);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Entity entity = collision.gameObject.GetComponent<Entity>();
+            entity.Attr.Attack(Attr.Damage);
+            Destroy(gameObject);
+        }
+    }
+
     protected virtual void Update()
     {
         Attr.Lifetime -= Time.deltaTime;

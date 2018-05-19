@@ -14,6 +14,7 @@ public class WeaponAttribute : ICloneable{
     public float SprayAngle;
     public int AmountShootBullets;
     public float Force;
+    public float Damage;
 
     public object Clone()
     {
@@ -27,7 +28,8 @@ public class WeaponAttribute : ICloneable{
             GameObject = GameObject,
             SprayAngle = SprayAngle,
             AmountShootBullets = AmountShootBullets,
-            Force = Force
+            Force = Force,
+            Damage = Damage
         };
     }
 }
