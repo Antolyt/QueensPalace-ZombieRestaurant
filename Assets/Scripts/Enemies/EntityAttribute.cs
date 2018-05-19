@@ -6,6 +6,7 @@ using UnityEngine;
 public class EntityAttribute : ICloneable
 {
     public float Health;
+    public float MaxHealth;
     public float Speed;
     public float Range;
     public float Damage;
@@ -20,6 +21,7 @@ public class EntityAttribute : ICloneable
         return new EntityAttribute
         {
             Health = Health,
+            MaxHealth = MaxHealth,
             Speed = Speed,
             Range = Range,
             Damage = Damage,

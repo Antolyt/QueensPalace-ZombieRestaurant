@@ -70,6 +70,7 @@ public class Memory : MonoBehaviour {
             AttackSpeed = 0.4f,
             Damage = 1,
             Health = 10,
+            MaxHealth = 10,
             Range = 1,
             Speed = 30,
             ViewingDistance = 8,
@@ -80,13 +81,15 @@ public class Memory : MonoBehaviour {
             AttackSpeed = 0.4f,
             Damage = 1,
             Health = 10,
+            MaxHealth = 10,
             Range = 1,
             Speed = 20,
             ViewingDistance = 8,
             DistToWaypoint = 1
         }).Set(typeof(PlayerHandler), new EntityAttribute
         {
-            Health = 100
+            Health = 100,
+            MaxHealth = 100
         });
     }
 
