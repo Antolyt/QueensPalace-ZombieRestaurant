@@ -8,6 +8,8 @@ public class FallOff : MonoBehaviour
     public Transform Root;
     public int Amount;
 
+    public SkinnedMeshRenderer Remove = null;
+
     EntityAttribute _attr;
 
     [Range(0, 1)]
@@ -30,6 +32,8 @@ public class FallOff : MonoBehaviour
 
                 SkinnedMeshRenderer rend = GetComponent<SkinnedMeshRenderer>();
                 rend.materials = new Material[0];
+                if(Remove != null)
+                    Remove.materials = new Material[0];
                 for (int i = 0; i < Amount; ++i)
                 {
                     foreach (GameObject obj in FallOfPart)
