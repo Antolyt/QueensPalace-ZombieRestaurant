@@ -11,6 +11,10 @@ public class TimerSphere : MonoBehaviour {
     private Texture2D _text;
     private float _blink = -1F;
     private Color _lastColor;
+    public bool IsBlinking()
+    {
+        return _blink >= 0F;
+    }
     public void StartBlink() {
         if (_blink < 0F)
         {
@@ -47,21 +51,17 @@ public class TimerSphere : MonoBehaviour {
         int i = 0;
         for (; i < f; ++i)
             _text.SetPixel(1, i, Color.white);
-        Debug.Log("i = " + i.ToString());
         for (; i < 20; ++i)
             _text.SetPixel(1, i, Color.black);
         _text.Apply();
         _progressMat.mainTexture = _text;
     }
-	// Use this for initialization
+
 	void Start () {
         _lastColor = blinkColor;
         _progressMat = GetComponent<MeshRenderer>().material;
         _text = new Texture2D(1, 20, TextureFormat.ARGB32, false);
-        for (int i = 0; i < 20; ++i) {
-            _text.SetPixel(1, i, Color.white);
-        }
-        SetProgress(1F);
+        SetProgress(0F);
 	}
 	
 	// Update is called once per frame

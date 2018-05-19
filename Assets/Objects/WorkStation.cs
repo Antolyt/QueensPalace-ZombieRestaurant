@@ -9,6 +9,7 @@ public class WorkStation : MonoBehaviour {
     private bool _timerVis = false;
     public Food.WorkStaitionType type;
     private CarrayObject _myCarry;
+    private ParticleSystem _smoke;
 
     void OnTriggerEnter(Collider other) {
         // this.GetComponent<MeshRenderer>().material.color = Color.red;
@@ -27,6 +28,7 @@ public class WorkStation : MonoBehaviour {
             CarrayObject otherCarry = other.GetComponent<CarrayObject>();
             if (!isProducer && !_myCarry.HasFood() && otherCarry.HasFood())
             {
+                Debug.Log("getFood");
                 Food.WorkStaitionType pFWT = otherCarry.GetFoodInfo().GetFirstStation();
                 if (pFWT != Food.WorkStaitionType.NIX && pFWT != type)
                     return;
@@ -36,6 +38,7 @@ public class WorkStation : MonoBehaviour {
             }
             else if (!isDestructor && _myCarry.HasFood() && otherCarry.IsEmpty())
             {
+                Debug.Log("give Food");
                 otherCarry.GiveFood(_myCarry.GetFood());
                 if (_myCarry.HasFood() || otherCarry.IsEmpty())
                     Debug.LogError("givaway failed");
@@ -43,7 +46,7 @@ public class WorkStation : MonoBehaviour {
                 {
                     _timerVis = false;
                     _timer.gameObject.SetActive(_timerVis);
-                    _timer.SetProgress(Cap(0F, 1F,_myCarry.GetFoodProgress()));
+                    // _timer.SetProgress(Cap(0F, 1F,_myCarry.GetFoodProgress()));
                 }
             }
             else if (!isDestructor && !isProducer && _myCarry.HasFood() && otherCarry.HasFood()) {
@@ -58,6 +61,7 @@ public class WorkStation : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
+        _smoke = GetComponent<ParticleSystem>();
         _myCarry = GetComponent<CarrayObject>();
         if (!isProducer)
         {
@@ -65,6 +69,8 @@ public class WorkStation : MonoBehaviour {
             if (_timer != null)
                 _timer.gameObject.SetActive(_timerVis);
         }
+        if (_smoke != null)
+            _smoke.Stop();
     }
 	
 	// Update is called once per frame
@@ -73,12 +79,14 @@ public class WorkStation : MonoBehaviour {
         {
             if (_myCarry.GetFoodInfo().state == Food.FoodState.BLACK)
             {
-                if (_timerVis)
+                if (_timerVis && _timer.isActiveAndEnabled)
                 {
                     _timer.StopBlink();
                     _timerVis = false;
                     _timer.gameObject.SetActive(_timerVis);
                 }
+                if (_smoke != null && !_smoke.isPlaying)
+                    _smoke.Play();
             }
             else if (_myCarry.GetFoodInfo().HasReachedTargetState())
             {
@@ -87,17 +95,28 @@ public class WorkStation : MonoBehaviour {
                     _timerVis = true;
                     _timer.gameObject.SetActive(_timerVis);
                 }
-                _timer.StartBlink();
+                if (!_timer.IsBlinking())
+                {
+                    _timer.StartBlink();
+                    Debug.Log("Start blink");
+                }
             }
             else
             {
-                if(!_timerVis)
+                if (!_timerVis)
                 {
                     _timerVis = true;
                     _timer.gameObject.SetActive(_timerVis);
                 }
                 _timer.SetProgress(_myCarry.GetFoodProgress());
             }
+        }
+        else
+        {
+            if (_smoke != null && _smoke.isPlaying)
+                _smoke.Stop();
+            if (_timer != null && _timer.IsBlinking())
+                _timer.StopBlink();
         }
 	}
 }

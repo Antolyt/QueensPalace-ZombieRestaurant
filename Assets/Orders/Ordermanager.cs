@@ -9,7 +9,10 @@ public class Ordermanager : MonoBehaviour {
 
 	void Start () {
     }
-
+    public List<Order> GetOrders()
+    {
+        return _orders;
+    }
 	void Update () {
 		if (Random.value < Time.deltaTime * spawnsPerSecond)
         {
