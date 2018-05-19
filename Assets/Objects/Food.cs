@@ -16,6 +16,7 @@ public class Food {
     private FoodState _targetState;
     private float _progress;
     private float _time;
+    private FootTransformer _footTran = null;
 
     public float GetProgress() { return _progress; }
     public bool HasReachedTargetState() { return state != FoodState.BLACK && state == _targetState; }
@@ -40,7 +41,7 @@ public class Food {
         return state != FoodState.RAW && state != FoodState.BLACK;
     }
     public WorkStaitionType GetFirstStation() { return _firstStation; }
-    public bool PlaceOnWorkstation(WorkStaitionType type) {
+    public bool PlaceOnWorkstation(WorkStaitionType type, FootTransformer footTran) {
         if (_firstStation == WorkStaitionType.NIX)
         {
             _firstStation = type;
@@ -50,12 +51,14 @@ public class Food {
         }
         if (_firstStation != type)
             return false;
+        _footTran = footTran;
         _currStaton = type;
         Debug.Log("currSTat: " + _currStaton.ToString());
         return true;
     }
     public void TakeFromWorkstation() {
         Debug.Log("take Food");
+        _footTran = null;
         _currStaton = WorkStaitionType.NIX;
     }
     public Food(BodyPart part)
@@ -71,10 +74,12 @@ public class Food {
             if (_progress > 1F && state != _targetState)
             {
                 state = _targetState;
+                _footTran.UpdteFood();
             }
             if (_progress > 2F && state != FoodState.BLACK) {
                 state = FoodState.BLACK;
                 _targetState = FoodState.BLACK;
+                _footTran.UpdteFood();
             }
         }
     }

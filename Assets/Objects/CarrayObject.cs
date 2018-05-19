@@ -5,8 +5,8 @@ using UnityEngine;
 public class CarrayObject : MonoBehaviour {
 
     private Food _food = null;
-    public MeshRenderer meet;
-    private MeshRenderer _footObj;
+    public FootTransformer meet;
+    private FootTransformer _footObj;
     private GameObject _plate = null;
     private bool _isWorstation;
     private bool _isPlayer;
@@ -35,15 +35,29 @@ public class CarrayObject : MonoBehaviour {
         _plate = null;
         return buffer;
     }
+    public void UpdateFood()
+    {
+        if (HasFood() && _isPlayer || _isWorstation)
+        {
+            _footObj.SetFood(_food);
+        }
+    }
     public bool GiveFood(Food food) {
         if (IsEmpty())
         {
-            _footObj.transform.parent = transform;
             _food = food;
             if (_isWorstation)
             {
                 _footObj = Instantiate(meet, transform.position + new Vector3(0F, 2F), Quaternion.identity);
-                return _food.PlaceOnWorkstation(_type);
+                _footObj.transform.parent = transform;
+                _footObj.SetFood(_food);
+                return _food.PlaceOnWorkstation(_type, _footObj);
+            }
+            else if (_isPlayer)
+            {
+                _footObj = Instantiate(meet, transform.position + new Vector3(0F, 0F, 2F), Quaternion.identity);
+                _footObj.transform.parent = transform;
+                _footObj.SetFood(_food);
             }
             return true;
         }
@@ -53,6 +67,10 @@ public class CarrayObject : MonoBehaviour {
         if (_isWorstation)
         {
             _food.TakeFromWorkstation();
+            Destroy(_footObj.gameObject);
+        }
+        else if (_isPlayer)
+        {
             Destroy(_footObj.gameObject);
         }
         Food f = _food;
@@ -69,9 +87,15 @@ public class CarrayObject : MonoBehaviour {
     }
 	void Start () {
         WorkStation ws =  GetComponent<WorkStation>();
+        _isWorstation = false;
+        _isPlayer = false;
         if (ws == null)
-            _isWorstation = false;
-        else {
+        {            
+            if (tag == "Player")
+                _isPlayer = true;
+        }
+        else
+        {
             _isWorstation = true;
             _type = ws.type;
             if (_type == Food.WorkStaitionType.NIX)
