@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 54639408094123856}
   - component: {fileID: 65006407089835824}
   - component: {fileID: 114402728540365616}
-  m_Layer: 0
+  - component: {fileID: 114504683967610286}
+  m_Layer: 13
   m_Name: FriendlyZombie
   m_TagString: Friendly
   m_Icon: {fileID: 0}
@@ -39,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4307211637994304}
   - component: {fileID: 137242887420296088}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hand_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4688665510219050}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Eye_left_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4156489928553204}
   - component: {fileID: 137135293957471708}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Foot_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +86,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4205375782247904}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hand_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4515907164048926}
   - component: {fileID: 137760739349959562}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +117,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4694392654806972}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Foot_right_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4818765725681814}
   - component: {fileID: 137035196124091572}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4828733087771738}
   - component: {fileID: 137654225952683796}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +164,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4038724052428352}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Eye_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4241904680838518}
   - component: {fileID: 137303400886976714}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Foot_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +195,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4331050625425966}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hand_right_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +210,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4456488088323370}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Head 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +225,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4657262437327250}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +240,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4217241752760166}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hand_left_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +255,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4523942080255118}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Foot_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +270,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4918687142648206}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hand_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +285,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4155165954310568}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Eye_right_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +300,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4619643524211006}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Eye_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4195212334763058}
   - component: {fileID: 137717711218763284}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hand_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +331,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4011695990133634}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Foot_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +346,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4317540336630448}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Foot_left_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +361,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4017111041563962}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +635,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1007879963835318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.36, y: 0, z: -7.88}
+  m_LocalPosition: {x: -9.36, y: 0, z: -0.1}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4657262437327250}
@@ -745,6 +746,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+--- !u!114 &114504683967610286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1007879963835318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5727da41724b14d96d63f5a3ad89d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RedBar: {fileID: 2800000, guid: 18e2ff1d451834543904126f62d5eb65, type: 3}
+  GreenBar: {fileID: 2800000, guid: 52a0b86a66ab743af98c4135d7f3e480, type: 3}
+  MaxLength: 45
 --- !u!137 &137035196124091572
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
