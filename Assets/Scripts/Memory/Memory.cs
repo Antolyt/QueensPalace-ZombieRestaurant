@@ -22,7 +22,7 @@ public class Memory : MonoBehaviour {
             GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
             SprayAngle = 10,
             AmountShootBullets = 1,
-            Force = 600
+            Force = 60
         }).Set(typeof(MachineGun), new WeaponAttribute
         {
             ReloadTime = 1f,
@@ -33,7 +33,7 @@ public class Memory : MonoBehaviour {
             GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
             AmountShootBullets = 1,
             SprayAngle = 5,
-            Force = 200
+            Force = 20
         }).Set(typeof(Shotgun), new WeaponAttribute
         {
             ReloadTime = 2f,
@@ -44,11 +44,11 @@ public class Memory : MonoBehaviour {
             GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
             AmountShootBullets = 8,
             SprayAngle = 15,
-            Force = 100
+            Force = 10
         }).Set(typeof(AttackScript), new WeaponAttribute
         {
             ShootDelay = 0.3f,
-            Force = 2000,
+            Force = 1000,
             Damage = 2
         });
 
@@ -70,7 +70,7 @@ public class Memory : MonoBehaviour {
             AttackSpeed = 0.4f,
             Damage = 1,
             Health = 10,
-            MaxHealth = 10,
+            MaxHealth = 10, 
             Range = 1,
             Speed = 30,
             ViewingDistance = 8,

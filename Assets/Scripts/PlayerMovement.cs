@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
 
     public float ForcePower;
     public int NumPlayer = 1;
@@ -12,13 +13,16 @@ public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody _rgdb;
     private Vector3 _lastDir = Vector3.forward;
+    private Animator _animator;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         _inputPrefix = "P" + NumPlayer + "_";
         _rgdb = GetComponent<Rigidbody>();
-	}
+        _animator = GetComponent<Animator>();
+    }
 
     private void FixedUpdate()
     {
@@ -31,6 +35,20 @@ public class PlayerMovement : MonoBehaviour {
         {
             dir.Normalize();
             _rgdb.AddForce(dir * ForcePower);
+            if (_animator != null)
+                _animator.SetBool("Walk", true);
+        }
+        else
+        {
+            if (_animator != null)
+                _animator.SetBool("Walk", false);
+        }
+
+        dir = new Vector3(Input.GetAxis(_inputPrefix + "Horizontal2"), 0, Input.GetAxis(_inputPrefix + "Vertical2"));
+        if (!dir.Equals(Vector3.zero))
+        {
+            transform.rotation = Quaternion.LookRotation(dir);
+            transform.Rotate(new Vector3(0, 90, 0));
         }
     }
 

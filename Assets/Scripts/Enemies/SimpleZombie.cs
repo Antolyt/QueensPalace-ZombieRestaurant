@@ -4,6 +4,4 @@ using UnityEngine;
 
 public class SimpleZombie : Entity {
 
-
-
 }
