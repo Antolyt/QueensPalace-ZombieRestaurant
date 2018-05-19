@@ -5,11 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     public BulletAttribute Attr = new BulletAttribute();
+    public Vector3 Dir;
 
     Memory _memory;
+    Rigidbody _rgdb;
 
     // Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
         _memory = GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>();
 
@@ -22,6 +24,17 @@ public class Bullet : MonoBehaviour {
         {
             _memory.SetAttribute(this);
         }
+
+        _rgdb = GetComponent<Rigidbody>();
+        _rgdb.AddForce(Dir * Attr.Speed);
+        transform.rotation = Quaternion.FromToRotation(Vector3.up, Dir);
+    }
+
+    protected virtual void Update()
+    {
+        Attr.Lifetime -= Time.deltaTime;
+        if (Attr.Lifetime <= 0)
+            Destroy(gameObject);
     }
 
 }

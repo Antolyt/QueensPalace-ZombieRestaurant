@@ -6,11 +6,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public float ForcePower;
-    public int NumPlayer;
+    public int NumPlayer = 1;
 
     private string _inputPrefix;
 
     private Rigidbody _rgdb;
+    private Vector3 _lastDir = Vector3.forward;
 
 
 	// Use this for initialization
@@ -33,8 +34,31 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    public Vector3 GetShootDir()
+    {
+        Vector3 dir = new Vector3(Input.GetAxis(_inputPrefix + "Horizontal2"), 0, Input.GetAxis(_inputPrefix + "Vertical2"));
+
+        if (dir.x != 0 || dir.z != 0)
+        {
+            _lastDir = dir.normalized;
+            return dir.normalized;
+        }
+        else
+            return _lastDir;
+    }
+
+    public bool GetAxisDown(string axis)
+    {
+        return Input.GetAxis(_inputPrefix + axis) != 0;
+    }
+
     public bool GetButtonDown(string button)
     {
         return Input.GetButtonDown(_inputPrefix + button);
+    }
+
+    public bool GetButton(string button)
+    {
+        return Input.GetButton(_inputPrefix + button);
     }
 }
