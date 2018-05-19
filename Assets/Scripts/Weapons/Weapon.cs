@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
 public class Weapon : MonoBehaviour {
 
-    private Memory _memory;
-    private PlayerMovement _input;
+    [SerializeField]
+    protected Memory _memory;
+    [SerializeField]
+    protected PlayerMovement _input;
+    protected Rigidbody _rgdb;
 
     public WeaponAttribute Attr = new WeaponAttribute();
 
@@ -15,13 +17,19 @@ public class Weapon : MonoBehaviour {
 
     private float timer = 0;
 
-
-	// Use this for initialization
-	void Start () {
+    private void OnValidate()
+    {
+        _input = GetComponentInParent<PlayerMovement>();
         _memory = GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>();
-        _input = GetComponent<PlayerMovement>();
+        _rgdb = GetComponentInParent<Rigidbody>();
+    }
 
-        if(_input == null)
+
+    // Use this for initialization
+    protected virtual void Start () {
+        OnShoot += ShootBullet;
+
+        if (_input == null)
         {
             Debug.LogWarning("Input Not Found " + this);
             enabled = false;
@@ -37,15 +45,40 @@ public class Weapon : MonoBehaviour {
             _memory.SetAttribute(this);
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    protected virtual void ShootBullet(Weapon weapon)
+    {
+        GameObject spawn = Instantiate(weapon.Attr.GameObject);
+        spawn.transform.position = weapon.transform.position;
+
+        Bullet bullet = (Bullet)spawn.AddComponent(weapon.Attr.Bullet);
+        bullet.Dir = _input.GetShootDir();
+
+        bullet.Dir = Quaternion.Euler(0, Random.Range(-Attr.SprayAngle / 2, Attr.SprayAngle / 2), 0) * bullet.Dir;
+
+        _rgdb.AddForce(bullet.Dir * -1 * Attr.Force);
+    }
+
+    // Update is called once per frame
+    protected virtual void Update () {
 
         timer += Time.deltaTime;
 
-        if(_input.GetButtonDown("B1"))
+        if(_input.GetAxisDown("R2") && timer >= Attr.ShootDelay && Attr.Ammo > 0)
         {
-            OnShoot(this);
+
+            timer %= Attr.ShootDelay;
+
+            if(OnShoot != null)
+                OnShoot(this);
+
+            Attr.Ammo -= Attr.AmountShootBullets;
+        }
+        else if(Attr.Ammo == 0 && timer >= Attr.ReloadTime)
+        {
+            timer %= Attr.ReloadTime;
+
+            Attr.Ammo = Attr.MaxAmmo;
         }
 	}
 }

@@ -10,6 +10,10 @@ public class WeaponAttribute : ICloneable{
     public int Ammo;
     public int MaxAmmo;
     public Type Bullet;
+    public GameObject GameObject;
+    public float SprayAngle;
+    public int AmountShootBullets;
+    public float Force;
 
     public object Clone()
     {
@@ -19,7 +23,11 @@ public class WeaponAttribute : ICloneable{
             ShootDelay = ShootDelay,
             Ammo = Ammo,
             MaxAmmo = MaxAmmo,
-            Bullet = Bullet
+            Bullet = Bullet,
+            GameObject = GameObject,
+            SprayAngle = SprayAngle,
+            AmountShootBullets = AmountShootBullets,
+            Force = Force
         };
     }
 }

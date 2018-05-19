@@ -5,7 +5,12 @@ using UnityEngine;
 public class CarrayObject : MonoBehaviour {
 
     private Food _food = null;
+    public MeshRenderer meet;
+    private MeshRenderer _footObj;
     private GameObject _plate = null;
+    private bool _isWorstation;
+    private bool _isPlayer;
+    private Food.WorkStaitionType _type;
     public bool HasFood() {
         return _food != null;
     }
@@ -33,20 +38,49 @@ public class CarrayObject : MonoBehaviour {
     public bool GiveFood(Food food) {
         if (IsEmpty())
         {
+            _footObj.transform.parent = transform;
             _food = food;
+            if (_isWorstation)
+            {
+                _footObj = Instantiate(meet, transform.position + new Vector3(0F, 2F), Quaternion.identity);
+                return _food.PlaceOnWorkstation(_type);
+            }
             return true;
         }
         else return false;
     }
     public Food GetFood() {
+        if (_isWorstation)
+        {
+            _food.TakeFromWorkstation();
+            Destroy(_footObj.gameObject);
+        }
         Food f = _food;
         _food = null;
         return f;
     }
-
+    public float GetFoodProgress() {
+        if (_food == null)
+            return -1F;
+        return _food.GetProgress();
+    }
+    public Food GetFoodInfo() {
+        return _food;
+    }
 	void Start () {
+        WorkStation ws =  GetComponent<WorkStation>();
+        if (ws == null)
+            _isWorstation = false;
+        else {
+            _isWorstation = true;
+            _type = ws.type;
+            if (_type == Food.WorkStaitionType.NIX)
+                _isWorstation = false;
+        }
     }
 	void Update () {
-        this.GetComponent<MeshRenderer>().material.color = IsEmpty() ? Color.red : Color.blue;
+        GetComponent<MeshRenderer>().material.color = IsEmpty() ? Color.red : Color.blue;
+        if (HasFood())
+            _food.Update();
     }
 }
