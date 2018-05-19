@@ -6,7 +6,7 @@ public class Food {
     public const float ofenTime = 7F;
     public const float pfanneTime = 7F;
     public const float fritteTime = 7F;
-    public enum BodyPart { HEAD, BODY, LEG };
+    public enum BodyPart { LIVER, SPARRIPS };
     public enum FoodState { FRIED, BACKED, BRATEN, RAW, BLACK };
     public enum WorkStaitionType { NIX, OFEN, PFANNE, FRITTE };
     public BodyPart part;
