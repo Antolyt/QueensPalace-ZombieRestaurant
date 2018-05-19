@@ -16,4 +16,10 @@ public static class Extension {
         dict.Add(key, attr);
         return dict;
     }
+
+    public static Dictionary<Type, EntityAttribute> Set(this Dictionary<Type, EntityAttribute> dict, Type key, EntityAttribute attr)
+    {
+        dict.Add(key, attr);
+        return dict;
+    }
 }

@@ -7,6 +7,7 @@ public class Memory : MonoBehaviour {
 
     private Dictionary<Type, WeaponAttribute> _weaponDictionary = new Dictionary<Type, WeaponAttribute>();
     private Dictionary<Type, BulletAttribute> _bulletDictionary = new Dictionary<Type, BulletAttribute>();
+    private Dictionary<Type, EntityAttribute> _entityDictionary = new Dictionary<Type, EntityAttribute>();
 
     // Use this for initialization
     void Awake () {
@@ -21,10 +22,10 @@ public class Memory : MonoBehaviour {
             GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
             SprayAngle = 10,
             AmountShootBullets = 1,
-            Force = 1000
+            Force = 600
         }).Set(typeof(MachineGun), new WeaponAttribute
         {
-            ReloadTime = 4f,
+            ReloadTime = 1f,
             Ammo = 30,
             MaxAmmo = 30,
             ShootDelay = 0.05f,
@@ -32,10 +33,10 @@ public class Memory : MonoBehaviour {
             GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
             AmountShootBullets = 1,
             SprayAngle = 5,
-            Force = 400
+            Force = 200
         }).Set(typeof(Shotgun), new WeaponAttribute
         {
-            ReloadTime = 6f,
+            ReloadTime = 2f,
             Ammo = 32,
             MaxAmmo = 32,
             ShootDelay = 0.4f,
@@ -43,7 +44,12 @@ public class Memory : MonoBehaviour {
             GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
             AmountShootBullets = 8,
             SprayAngle = 15,
-            Force = 200
+            Force = 100
+        }).Set(typeof(AttackScript), new WeaponAttribute
+        {
+            ShootDelay = 0.3f,
+            Force = 2000,
+            Damage = 2
         });
 
         _bulletDictionary.Set(typeof(SimpleBullet), new BulletAttribute
@@ -57,6 +63,39 @@ public class Memory : MonoBehaviour {
             Speed = 2000f,
             Lifetime = 0.15f
         });
+
+        _entityDictionary.Set(typeof(SimpleZombie), new EntityAttribute
+        {
+            AIScript = typeof(AINearestEntity),
+            AttackSpeed = 0.4f,
+            Damage = 1,
+            Health = 10,
+            Range = 1,
+            Speed = 30,
+            ViewingDistance = 8,
+            AttackScript = typeof(AttackScript)
+        }).Set(typeof(FriendlyZombie), new EntityAttribute
+        {
+            AIScript = typeof(AIFollowingPath),
+            AttackSpeed = 0.4f,
+            Damage = 1,
+            Health = 10,
+            Range = 1,
+            Speed = 20,
+            ViewingDistance = 8,
+            DistToWaypoint = 1
+        }).Set(typeof(PlayerHandler), new EntityAttribute
+        {
+            Health = 100
+        });
+    }
+
+    public void SetAttribute(AttackScript obj)
+    {
+        if (_weaponDictionary.ContainsKey(obj.GetType()))
+        {
+            obj.Attr = (WeaponAttribute)_weaponDictionary[obj.GetType()].Clone();
+        }
     }
 
     public void SetAttribute(Weapon obj)
@@ -72,6 +111,14 @@ public class Memory : MonoBehaviour {
         if (_bulletDictionary.ContainsKey(obj.GetType()))
         {
             obj.Attr = (BulletAttribute)_bulletDictionary[obj.GetType()].Clone();
+        }
+    }
+
+    public void SetAttribute(Entity obj)
+    {
+        if (_entityDictionary.ContainsKey(obj.GetType()))
+        {
+            obj.Attr = (EntityAttribute)_entityDictionary[obj.GetType()].Clone();
         }
     }
 }
