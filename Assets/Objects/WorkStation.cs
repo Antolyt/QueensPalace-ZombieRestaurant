@@ -9,22 +9,22 @@ public class WorkStation : MonoBehaviour {
         // this.GetComponent<MeshRenderer>().material.color = Color.red;
     }
     void OnTriggerStay(Collider other) {
-        if (other.GetComponent<PlayerMovement>().GetButtonDown("B1")) {
+        if (other.GetComponent<ColliderCounter>().CollideOnlyOnInteractivObject() && other.GetComponent<PlayerMovement>().GetButtonDown("B1")) {
             // this.GetComponent<MeshRenderer>().material.color = Color.yellow;
             CarrayObject otherCarry = other.GetComponent<CarrayObject>();
-            if (_myCarry.IsEmpty() && !otherCarry.IsEmpty())
+            if (!_myCarry.HasFood() && otherCarry.HasFood())
             {
                 _myCarry.GiveFood(otherCarry.GetFood());
-                if (_myCarry.IsEmpty() || !otherCarry.IsEmpty())
+                if (!_myCarry.HasFood() || !otherCarry.IsEmpty())
                     Debug.LogError("TransactionFailed");
             }
-            else if (!_myCarry.IsEmpty() && otherCarry.IsEmpty())
+            else if (_myCarry.HasFood() && otherCarry.IsEmpty())
             {
                 otherCarry.GiveFood(_myCarry.GetFood());
-                if (!_myCarry.IsEmpty() || otherCarry.IsEmpty())
+                if (_myCarry.HasFood() || otherCarry.IsEmpty())
                     Debug.LogError("recive Failed");
             }
-            else if (!isProducer && !_myCarry.IsEmpty() && !otherCarry.IsEmpty()) {
+            else if (!isProducer && _myCarry.HasFood() && otherCarry.HasFood()) {
                 Food buffer = otherCarry.GetFood();
                 otherCarry.GiveFood(_myCarry.GetFood());
                 _myCarry.GiveFood(buffer);
