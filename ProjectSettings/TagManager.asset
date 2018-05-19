@@ -7,8 +7,9 @@ TagManager:
   - Tabel
   - Memory
   - Enemy
-  - Wall
   - Friendly
+  - Wall
+  - Orders
   layers:
   - Default
   - TransparentFX
