@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 GetShootDir()
     {
-        Vector3 dir = new Vector3(Input.GetAxis(_inputPrefix + "Horizontal2"), 0, Input.GetAxis(_inputPrefix + "Vertical2"));
+        Vector3 dir = this.transform.rotation * Quaternion.Euler(0, -90, 0) *  Vector3.forward;
 
         if (dir.x != 0 || dir.z != 0)
         {

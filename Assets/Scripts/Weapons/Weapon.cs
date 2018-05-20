@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour {
 
     private float timer = 0;
 
+    public HanHanAPI hanHanApi;
+
     private void OnValidate()
     {
         _input = GetComponentInParent<PlayerMovement>();
@@ -80,5 +82,7 @@ public class Weapon : MonoBehaviour {
 
             Attr.Ammo = Attr.MaxAmmo;
         }
-	}
+
+        hanHanApi.SetWeaponDis(this.GetType().ToString(), Attr);
+    }
 }
