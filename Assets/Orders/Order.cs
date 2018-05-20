@@ -108,13 +108,23 @@ public class Order : MonoBehaviour {
 
     public bool IsValid(Food[] foods)
     {
-        if (!(foods.Length == numFoots))
+        int l = 0;
+        foreach (Food f in foods)
+            if (f != null)
+                l++;
+        if (!(l == numFoots))
+        {
+            // Debug.Log(numFoots.ToString()+ "<-mylength, searched " + l.ToString());
             return false;
+        }
         int i = 0;
         foreach(Food f in foods)
         {
-            if (f.state != states[i] || f.part != parts[i])
+            if (f != null && (f.state != states[i] || f.part != parts[i]))
+            {
+                Debug.Log("Part: " + f.part.ToString() + "   State: " + f.state.ToString() + "\nPart: " + parts[i].ToString() + "  state: " + states[i].ToString() + "No Match");
                 return false;
+            }
             ++i;
         }
         return true;

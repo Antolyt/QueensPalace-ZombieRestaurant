@@ -10,6 +10,19 @@ public class PlatePlace : MonoBehaviour {
     public bool isDestructr = false;
     public bool HasPlate() { return plate != null; }
     public void DEstroyPlate() { if (isDestructr) { Destroy(plate); plate = null; } }
+    public void Checkout (Ordermanager om)
+    {
+        if (plate != null)
+            plate.GetComponent<Plate>().Checkout(om);
+    }
+    public void RescivePlate(Plate newPlate)
+    {
+        if (plate != null)
+            Destroy(plate);
+        plate = newPlate.gameObject;
+        plate.transform.parent = transform;
+        plate.transform.localPosition = new Vector3(0F, 0F, 0F);
+    }
     void OnTriggerStay(Collider other) {
         if ( other.GetComponent<ColliderCounter>().CollideOnlyOnInteractivObject() && other.GetComponent<PlayerMovement>().GetButtonDown("B1")) {
             CarrayObject otherCarry = other.GetComponent<CarrayObject>();

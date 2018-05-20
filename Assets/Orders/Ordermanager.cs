@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ordermanager : MonoBehaviour {
     public Order page;
+    private const int maxOrders = 12;
     private Order _newOrder = null;
     private List<Order> _orders;
     public float spawnsPerSecond;
@@ -12,12 +13,31 @@ public class Ordermanager : MonoBehaviour {
 	void Start () {
         _orders = new List<Order>();
     }
+    public void AceptPlate(Food[] foods)
+    {
+        bool finish = false;
+        Order de = null;
+        foreach ( Order o in _orders)
+        {
+            if (finish)
+                o.transform.localPosition += new Vector3(-160F, 0F, 0F);
+            else if (o.IsValid(foods))
+            {
+                Destroy(o.gameObject);
+                de = o;
+                Debug.Log("Richtiges Esssen");
+                finish = true;
+            }
+        }
+        if (finish)
+            _orders.Remove(de);
+    }
     public List<Order> GetOrders()
     {
         return _orders;
     }
 	void Update () {
-		if (Random.value < Time.deltaTime * spawnsPerSecond)
+		if (_orders.Count < maxOrders && Random.value < Time.deltaTime * spawnsPerSecond)
         {
             _newOrder = Instantiate(page, transform.GetChild(0).transform);
             int row = (int)(_orders.Count - 1) / 6;
