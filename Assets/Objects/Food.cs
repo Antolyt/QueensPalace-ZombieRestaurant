@@ -7,8 +7,8 @@ public class Food {
     public const float pfanneTime = 7F;
     public const float fritteTime = 7F;
     public enum BodyPart { LIVER, SPARRIPS };
-    public enum FoodState { FRIED, BACKED, BRATEN, RAW, BLACK };
-    public enum WorkStaitionType { NIX, OFEN, PFANNE, FRITTE };
+    public enum FoodState { BACKED, BRATEN, RAW, BLACK };
+    public enum WorkStaitionType { NIX, OFEN, PFANNE };
     public BodyPart part;
     public FoodState state;
     private WorkStaitionType _currStaton = WorkStaitionType.NIX;
@@ -25,7 +25,7 @@ public class Food {
         switch (type) {
             case WorkStaitionType.OFEN: return ofenTime;
             case WorkStaitionType.PFANNE: return pfanneTime;
-            case WorkStaitionType.FRITTE: return fritteTime;
+            // case WorkStaitionType.FRITTE: return fritteTime;
             default: return 0F;
         }
     }
@@ -33,7 +33,7 @@ public class Food {
         switch(type) {
             case WorkStaitionType.OFEN: return FoodState.BACKED;
             case WorkStaitionType.PFANNE: return FoodState.BRATEN;
-            case WorkStaitionType.FRITTE: return FoodState.FRIED;
+            // case WorkStaitionType.FRITTE: return FoodState.FRIED;
             default: return FoodState.BLACK;
         }
     }

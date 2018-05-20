@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour {
     private const int MAX_AMOUNT_FOOD = 3;
+    public FootTransformer[] mets = null;
+    private FootTransformer[] _assets;
     private Food[] _foods;
     private int _amountFoods = 0;
     public int NumFreeSlots() {
@@ -23,6 +25,12 @@ public class Plate : MonoBehaviour {
         if (_amountFoods < MAX_AMOUNT_FOOD && food.Eatebal() && !IsAlreadyOnPlate(food))
         {
             _foods[_amountFoods++] = food;
+            _assets[_amountFoods - 1] = Instantiate(mets[(int)food.part], new Vector3(), Quaternion.identity);
+            _assets[_amountFoods - 1].transform.parent = transform;
+            _assets[_amountFoods - 1].transform.localPosition = new Vector3(0.0004f, -0.0004f, 15.74f);
+            _assets[_amountFoods - 1].transform.localEulerAngles = new Vector3(0F, 0F, -93F);
+            _assets[_amountFoods - 1].transform.localScale = new Vector3(0.13f, 0.125f, 0.37f);
+            _assets[_amountFoods - 1].SetFood(_foods[_amountFoods-1]);
             Color c;
             switch (_amountFoods) {
                 case 1: c = Color.yellow;
@@ -43,7 +51,9 @@ public class Plate : MonoBehaviour {
         return false;
     }
 	void Start () {
+        GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>().SetAttribute(this);
         _foods = new Food[MAX_AMOUNT_FOOD] { null , null, null};
+        _assets = new FootTransformer[MAX_AMOUNT_FOOD] { null, null, null};
     }
 	void Update () {}
 }

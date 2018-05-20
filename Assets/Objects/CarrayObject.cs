@@ -60,8 +60,19 @@ public class CarrayObject : MonoBehaviour {
             _food = food;
             if (_isWorstation || _isPlatePlace)
             {
-                _footObj = Instantiate(mets[(int)food.part], transform.position + new Vector3(0F, 2F), Quaternion.identity);
-                _footObj.transform.parent = transform;
+                if (_type == Food.WorkStaitionType.PFANNE)
+                {
+                    _footObj = Instantiate(mets[(int)food.part], transform.position, Quaternion.identity);
+                    _footObj.transform.parent = transform;
+                    _footObj.transform.localEulerAngles = new Vector3(90F, 0F, 0F);
+                    _footObj.transform.localPosition = new Vector3(-0.39f, 1.04f, 0.03f);
+                    _footObj.transform.localScale = new Vector3(10, 11, 12.5f);
+                }
+                else
+                {
+                    _footObj = Instantiate(mets[(int)food.part], transform.position + new Vector3(0F, 2F), Quaternion.identity);
+                    _footObj.transform.parent = transform;
+                }
                 _footObj.SetFood(_food);
                 return _food.PlaceOnWorkstation(_type, _footObj);
             }
@@ -70,7 +81,7 @@ public class CarrayObject : MonoBehaviour {
                 GetComponent<Animator>().SetBool("HasPlate", true);
                 _footObj = Instantiate(mets[(int)food.part], new Vector3() , Quaternion.identity);
                 _footObj.transform.parent = transform;
-                _footObj.transform.localPosition = new Vector3(-1.93f, 2.5f, -0.5f);
+                _footObj.transform.localPosition = new Vector3(-1.93f, 2.9f, -0.5f);
                 _footObj.transform.localEulerAngles = new Vector3(90F, 0F, 0F);
                 _footObj.transform.parent = _lefthand;
                 _footObj.SetFood(_food);
@@ -124,7 +135,7 @@ public class CarrayObject : MonoBehaviour {
                 PlatePlace pp = GetComponent<PlatePlace>();
                 if (pp != null)
                 {
-                    if (!pp.isDestructr && !pp.isProducer)
+                    if (!pp.isDestructr)
                         _isPlatePlace = true;
                 }
             }

@@ -42,6 +42,8 @@ public class TimerSphere : MonoBehaviour {
         if (_progress == progress)
             return;
         _blink = -1F;
+        if (_progressMat == null)
+            return;
         if (_lastColor != blinkColor) {
             _progressMat.color = _lastColor;
             _lastColor = blinkColor;

@@ -96,7 +96,14 @@ public class Memory : MonoBehaviour {
     {
         obj.mets = bodyParts;
     }
-
+    public void SetAttribute(Plate obj)
+    {
+        obj.mets = bodyParts;
+    }
+    public void SetAttribute(MeetProducer obj)
+    {
+        obj.meats = bodyParts;
+    }
     public void SetAttribute(AttackScript obj)
     {
         if (_weaponDictionary.ContainsKey(obj.GetType()))
