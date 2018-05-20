@@ -28,6 +28,7 @@ public class CarrayObject : MonoBehaviour {
             _plate.transform.parent = this.GetComponent<Transform>();
             if (_isPlayer)
             {
+                GetComponent<Animator>().SetBool("HasPlate", true);
                 _plate.transform.localPosition = new Vector3(-1.93f, 2.5f, 0f);
             }
             return true;
@@ -35,6 +36,10 @@ public class CarrayObject : MonoBehaviour {
         return false;
     }
     public GameObject GetPlate() {
+        if(_isPlayer)
+        {
+            GetComponent<Animator>().SetBool("HasPlate", true);
+        }
         _plate.transform.parent = null;
         GameObject buffer = _plate;
         _plate = null;
