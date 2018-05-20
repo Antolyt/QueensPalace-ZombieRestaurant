@@ -9,8 +9,9 @@ public class PlatePlace : MonoBehaviour {
     public bool isProducer = false;
     public bool isDestructr = false;
     public bool isTrash = false;
+
     public bool HasPlate() { return plate != null; }
-    public void DEstroyPlate() { if (isDestructr) { Destroy(plate); plate = null; } }
+    public void DEstroyPlate() { if (isDestructr) {Destroy(plate.gameObject); plate = null; } }
     public void Checkout (Ordermanager om)
     {
         if (plate != null)
@@ -22,7 +23,10 @@ public class PlatePlace : MonoBehaviour {
             Destroy(plate);
         plate = newPlate.gameObject;
         plate.transform.parent = transform;
-        plate.transform.localPosition = new Vector3(0F, 0F, 0F);
+        if (isProducer)
+            plate.transform.localPosition = new Vector3(0F, 2.5f, 0.8f);
+        else
+            plate.transform.localPosition = new Vector3(0F, 0F, 0F);
     }
     void OnTriggerStay(Collider other) {
         if ( other.GetComponent<ColliderCounter>().CollideOnlyOnInteractivObject() && other.GetComponent<PlayerMovement>().GetButtonDown("B1")) {
@@ -60,7 +64,7 @@ public class PlatePlace : MonoBehaviour {
                         otherCarry.GiveFood(_carray.GetFood());     // Teller darv nur platziert werdeb wenn, wenn essen da liegt nur platzieren wenn es hinpasst, ansonsten switch
                     }
                 }
-                if (plate == null)
+                if (plate == null && !isTrash)
                     Debug.LogError("no GameObject");
             }
             else if (!isDestructr && !otherCarry.HasPlate() && plate != null) {

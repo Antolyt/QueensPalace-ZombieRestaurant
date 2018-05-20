@@ -59,6 +59,10 @@ public class CarrayObject : MonoBehaviour {
             _footObj.SetFood(_food);
         }
     }
+    public bool AddFoodToPlate(Food food)
+    {
+        return _plate.GetComponent<Plate>().PlaceFood(food);
+    }
     public bool GiveFood(Food food) {
         if (IsEmpty())
         {
@@ -69,13 +73,13 @@ public class CarrayObject : MonoBehaviour {
                 {
                     _footObj = Instantiate(mets[(int)food.part], transform.position, Quaternion.identity);
                     _footObj.transform.parent = transform;
-                    _footObj.transform.localEulerAngles = new Vector3(90F, 0F, 0F);
-                    _footObj.transform.localPosition = new Vector3(-0.39f, 1.04f, 0.03f);
-                    _footObj.transform.localScale = new Vector3(10, 11, 12.5f);
+                    _footObj.transform.localEulerAngles = new Vector3(-90F, 0F, 0F);
+                    _footObj.transform.localPosition = new Vector3(0F, 1.7f, 0F);
                 }
                 else
                 {
-                    _footObj = Instantiate(mets[(int)food.part], transform.position + new Vector3(0F, 2F), Quaternion.identity);
+                    _footObj = Instantiate(mets[(int)food.part], transform.position + new Vector3(0F, 0.2f), Quaternion.identity);
+                    _footObj.transform.eulerAngles = new Vector3(-90F, 0F, 0F);
                     _footObj.transform.parent = transform;
                 }
                 _footObj.SetFood(_food);

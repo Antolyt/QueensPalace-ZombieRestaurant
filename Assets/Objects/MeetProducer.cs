@@ -9,10 +9,12 @@ public class MeetProducer : MonoBehaviour {
     private CarrayObject _myCarry;
 	void Start () {
         GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>().SetAttribute(this);
-        _foodObj = Instantiate(meats[(int)part], transform.position + new Vector3(0F, 2F), Quaternion.identity);
+        _foodObj = Instantiate(meats[(int)part], transform.position + new Vector3(0F, 0.3f), Quaternion.identity);
+        _foodObj.transform.eulerAngles = new Vector3(-90F, 0F, 0F);
         _foodObj.transform.parent = transform;
         _myCarry = this.GetComponent<CarrayObject>();
         _myCarry.GiveFood(new Food(part));
+        _foodObj.SetFood(_myCarry.GetFoodInfo());
     }
 	void Update () {
         if(!_myCarry.HasFood())

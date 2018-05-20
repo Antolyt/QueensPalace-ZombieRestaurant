@@ -36,12 +36,20 @@ public class WorkStation : MonoBehaviour {
                 if (!_myCarry.HasFood() || !otherCarry.IsEmpty())
                     Debug.LogError("resive failed");
             }
-            else if (!isDestructor && _myCarry.HasFood() && otherCarry.IsEmpty())
+            else if (!isDestructor && _myCarry.HasFood() && !otherCarry.HasFood())
             {
                 Debug.Log("give Food");
-                otherCarry.GiveFood(_myCarry.GetFood());
-                if (_myCarry.HasFood() || otherCarry.IsEmpty())
-                    Debug.LogError("givaway failed");
+                if (otherCarry.HasPlate())
+                {
+                    if (otherCarry.AddFoodToPlate(_myCarry.GetFoodInfo()))
+                        _myCarry.GetFood();
+                }
+                else
+                {
+                    otherCarry.GiveFood(_myCarry.GetFood());
+                    if (_myCarry.HasFood() || otherCarry.IsEmpty())
+                        Debug.LogError("givaway failed");
+                }
                 if (!isProducer)
                 {
                     _timerVis = false;

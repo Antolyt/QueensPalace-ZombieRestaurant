@@ -71,6 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   page: {fileID: 114452322895397544, guid: 916fd8ab31ad57d4e99ddda44e879d98, type: 2}
+  liveTime: 60
+  maxOrders: 6
   spawnsPerSecond: 0.1
 --- !u!114 &114913682066758858
 MonoBehaviour:
