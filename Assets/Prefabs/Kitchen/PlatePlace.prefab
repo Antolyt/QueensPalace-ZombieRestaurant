@@ -66,8 +66,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1971592489866950}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 13, y: 3.65, z: 18}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 13, y: 3.65, z: 14.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4620359085654946}
@@ -155,6 +155,7 @@ MonoBehaviour:
   plate: {fileID: 1841168401723138}
   isProducer: 0
   isDestructr: 0
+  isTrash: 0
 --- !u!114 &114581693085671176
 MonoBehaviour:
   m_ObjectHideFlags: 1

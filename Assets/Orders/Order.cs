@@ -7,9 +7,19 @@ public class Order : MonoBehaviour {
     // Settings
     public int numFoots;
     public int idF = 40;
+    public Color full = Color.green;
+    public Color halv = Color.yellow;
+    public Color empty = Color.red;
+    public Slider slider;
+    public Image sliderImage;
 
     public Food.FoodState[] states;
     public Food.BodyPart[] parts;
+
+    public float _liveTime = 4F;
+    private float _maxTime = 4F;
+    private Ordermanager _om;
+    private int _id;
 
     public Order()
     {
@@ -45,13 +55,17 @@ public class Order : MonoBehaviour {
         }
         return false;
     }
-    public void Init(int id)
+    public void Init(int id, float liveTime, Ordermanager om)
     {
+        _id = id;
+        _om = om;
+        _liveTime = liveTime;
+        _maxTime = _liveTime;
         numFoots = 1;
         if (Random.value * idF > 10)
             numFoots++;
-        //if (Random.value * idF > 10)
-        //    numFoots++;
+        /*if (Random.value * idF > 10)
+            numFoots++;*/
         int bodyParts = Food.BodyPart.GetNames(typeof(Food.BodyPart)).Length - 1;
         int zuA = Food.FoodState.GetNames(typeof(Food.FoodState)).Length - 3; // Vorsichtig
         Debug.Log("asas: "+zuA.ToString());
@@ -105,7 +119,17 @@ public class Order : MonoBehaviour {
         }
         GetComponentInChildren<Text>().text = text;
     }
-
+    private bool HaveFood(Food food)
+    {
+        if (food == null)
+            return true;
+        for (int i = 0; i < parts.Length; ++i)
+        {
+            if (food.part == parts[i] && food.state == states[i])
+                return true;
+        }
+        return false;
+    }
     public bool IsValid(Food[] foods)
     {
         int l = 0;
@@ -120,13 +144,36 @@ public class Order : MonoBehaviour {
         int i = 0;
         foreach(Food f in foods)
         {
-            if (f != null && (f.state != states[i] || f.part != parts[i]))
-            {
-                Debug.Log("Part: " + f.part.ToString() + "   State: " + f.state.ToString() + "\nPart: " + parts[i].ToString() + "  state: " + states[i].ToString() + "No Match");
+            if (!HaveFood(f))
                 return false;
-            }
             ++i;
         }
+        i = foods.Length;
         return true;
+    }
+    void Start()
+    {
+        // _liveTime = 4F;
+        // _maxTime = _liveTime;
+    }
+    private bool _run = true;
+    void Update()
+    {
+        _liveTime -= Time.deltaTime;
+        if (_liveTime > 0)
+        {
+            float prog = _liveTime / _maxTime;
+            // Debug.Log("Prog_ " + prog.ToString());
+            slider.value = prog;
+            if (prog < 0.5f)
+                sliderImage.color = Color.Lerp(empty, halv, prog * 2F);
+            else
+                sliderImage.color = Color.Lerp(halv, full, (prog - 0.5f) * 2F);
+        }
+        else if(_run)
+        {
+            _om.kaputt(this);
+            _run = false;
+        }
     }
 }
