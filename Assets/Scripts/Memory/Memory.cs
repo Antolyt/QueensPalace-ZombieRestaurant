@@ -54,12 +54,12 @@ public class Memory : MonoBehaviour {
         _bulletDictionary.Set(typeof(SimpleBullet), new BulletAttribute
         {
             Damage = 1f,
-            Speed = 1000f,
+            Speed = 8000f,
             Lifetime = 3f
         }).Set(typeof(ShotgunBullet), new BulletAttribute
         {
             Damage = 2f,
-            Speed = 500f,
+            Speed = 5000f,
             Lifetime = 0.5f
         });
 
@@ -71,8 +71,8 @@ public class Memory : MonoBehaviour {
             Health = 10,
             MaxHealth = 10, 
             Range = 1,
-            Speed = 30,
-            ViewingDistance = 8,
+            Speed = 100,
+            ViewingDistance = 16,
             AttackScript = typeof(AttackScript)
         }).Set(typeof(FriendlyZombie), new EntityAttribute
         {
@@ -82,7 +82,7 @@ public class Memory : MonoBehaviour {
             Health = 10,
             MaxHealth = 10,
             Range = 1,
-            Speed = 20,
+            Speed = 80,
             ViewingDistance = 8,
             DistToWaypoint = 1
         }).Set(typeof(PlayerHandler), new EntityAttribute

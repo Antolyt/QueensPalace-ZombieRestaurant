@@ -4,12 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Tabel
-  - Memory
-  - Enemy
-  - Friendly
-  - Wall
-  - Orders
   - Wapon
   layers:
   - Default
@@ -20,14 +14,14 @@ TagManager:
   - UI
   - 
   - 
-  - Enemy
-  - Player
-  - Bullet
-  - Ground
-  - Door
-  - Friendly
-  - Border
-  - KitchenBox
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
