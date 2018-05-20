@@ -15,7 +15,9 @@ ModelImporter:
     2100000: Flesh
     2100002: Bones
     2300000: Spareribs
+    2300002: //RootNode
     3300000: Spareribs
+    3300002: //RootNode
     4300000: Spareribs
     10800000: Lamp
   externalObjects: {}

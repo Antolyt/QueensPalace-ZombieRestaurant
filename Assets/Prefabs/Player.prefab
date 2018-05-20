@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 114768800608013388}
   - component: {fileID: 114051818338078428}
   - component: {fileID: 114231826735086802}
+  - component: {fileID: 114948145179266808}
   m_Layer: 9
   m_Name: Weapons
   m_TagString: Untagged
@@ -725,8 +726,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1556845243112306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.96, y: 3.34, z: 2.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4452000459027826}
   - {fileID: 4688625324597146}
@@ -768,7 +769,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!65 &65926137701975210
 BoxCollider:
@@ -813,6 +814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _memory: {fileID: 0}
   _input: {fileID: 0}
+  hanHanApi: {fileID: 114948145179266808}
 --- !u!114 &114134927113250798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -851,13 +853,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _memory: {fileID: 0}
   _input: {fileID: 0}
+  hanHanApi: {fileID: 114948145179266808}
 --- !u!114 &114637819466138490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1556845243112306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1ae27ba4000404688a679aeb542f45, type: 3}
   m_Name: 
@@ -905,6 +908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _memory: {fileID: 0}
   _input: {fileID: 0}
+  hanHanApi: {fileID: 114948145179266808}
 --- !u!114 &114882523123897128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -916,6 +920,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3bc21e3a6993a49843c7387931dea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114948145179266808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668502339618742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c987ac007e3c446baa87799a1898bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+    name: 
+    ReloadTime: 0
+    ShootDelay: 0
+    Ammo: 0
+    MaxAmmo: 0
+    SprayAngle: 0
+    AmountShootBullets: 0
+    Force: 0
+    Damage: 0
 --- !u!137 &137083244915761774
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
