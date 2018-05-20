@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CarrayObject : MonoBehaviour {
 
+    public Transform _lefthand = null;
     private Food _food = null;
     private FootTransformer _footObj;
     private GameObject _plate = null;
     private bool _isWorstation;
     private bool _isPlayer;
     private bool _isPlatePlace;
-    private Transform _lefthand = null;
     private Food.WorkStaitionType _type;
     public FootTransformer[] mets = null;
     public bool HasFood() {
@@ -144,7 +144,6 @@ public class CarrayObject : MonoBehaviour {
                 _isPlayer = true;
                 // GetComponent<Animator>().SetBool("IsInKitchen", true);
                 // GetComponentInChildren<Pistol>().gameObject.SetActive(false);
-                _lefthand = gameObject.transform.GetChild(1).GetChild(0).GetChild(0).transform;
                 if (_lefthand == null)
                     Debug.LogError("no Object with name Left Hand");
             }
