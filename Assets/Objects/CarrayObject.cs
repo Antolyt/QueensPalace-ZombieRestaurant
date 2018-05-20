@@ -26,8 +26,10 @@ public class CarrayObject : MonoBehaviour {
         {
             _plate = plate;
             _plate.transform.parent = this.GetComponent<Transform>();
-            // if(_isPlayer)
-            //    _plate.transform.localPosition = new Vector3(2F, 0F, 0F);
+            if (_isPlayer)
+            {
+                _plate.transform.localPosition = new Vector3(-1.93f, 2.5f, 0f);
+            }
             return true;
         }
         return false;

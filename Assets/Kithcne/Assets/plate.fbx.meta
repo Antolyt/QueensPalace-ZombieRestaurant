@@ -27,11 +27,13 @@ ModelImporter:
     2300004: Torus.005
     2300006: Torus.006
     2300008: Torus.007
+    2300010: //RootNode
     3300000: Cylinder
     3300002: Torus.004
     3300004: Torus.005
     3300006: Torus.006
     3300008: Torus.007
+    3300010: //RootNode
     4300000: Torus.007
     4300002: Torus.006
     4300004: Torus.005

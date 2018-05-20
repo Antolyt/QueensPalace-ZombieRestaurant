@@ -34,7 +34,10 @@ public class Plate : MonoBehaviour {
                 default: c = Color.white;
                     break;
             }
-            this.GetComponent<MeshRenderer>().material.color = c;
+            foreach (MeshRenderer m in GetComponents<MeshRenderer>())
+            {
+                m.material.color = c;
+            }
             return true;
         }
         return false;
