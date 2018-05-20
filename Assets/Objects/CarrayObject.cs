@@ -10,6 +10,7 @@ public class CarrayObject : MonoBehaviour {
     private GameObject _plate = null;
     private bool _isWorstation;
     private bool _isPlayer;
+    private bool _isPlatePlace;
     private Food.WorkStaitionType _type;
     public bool HasFood() {
         return _food != null;
@@ -25,6 +26,8 @@ public class CarrayObject : MonoBehaviour {
         {
             _plate = plate;
             _plate.transform.parent = this.GetComponent<Transform>();
+            // if(_isPlayer)
+            //    _plate.transform.localPosition = new Vector3(2F, 0F, 0F);
             return true;
         }
         return false;
@@ -37,7 +40,7 @@ public class CarrayObject : MonoBehaviour {
     }
     public void UpdateFood()
     {
-        if (HasFood() && _isPlayer || _isWorstation)
+        if (HasFood() && _isPlayer || _isWorstation || _isPlatePlace)
         {
             _footObj.SetFood(_food);
         }
@@ -46,7 +49,7 @@ public class CarrayObject : MonoBehaviour {
         if (IsEmpty())
         {
             _food = food;
-            if (_isWorstation)
+            if (_isWorstation || _isPlatePlace)
             {
                 _footObj = Instantiate(meet, transform.position + new Vector3(0F, 2F), Quaternion.identity);
                 _footObj.transform.parent = transform;
@@ -64,7 +67,7 @@ public class CarrayObject : MonoBehaviour {
         else return false;
     }
     public Food GetFood() {
-        if (_isWorstation)
+        if (_isWorstation || _isPlatePlace)
         {
             _food.TakeFromWorkstation();
             Destroy(_footObj.gameObject);
@@ -89,10 +92,21 @@ public class CarrayObject : MonoBehaviour {
         WorkStation ws =  GetComponent<WorkStation>();
         _isWorstation = false;
         _isPlayer = false;
+        _isPlatePlace = false;
         if (ws == null)
         {            
             if (tag == "Player")
                 _isPlayer = true;
+            else
+            {
+                PlatePlace pp = GetComponent<PlatePlace>();
+                if(pp != null)
+                {
+                    if (!pp.isDestructr && !pp.isProducer)
+                        _isPlatePlace = true;
+                }
+            }
+
         }
         else
         {
