@@ -273,7 +273,6 @@ GameObject:
   - component: {fileID: 114942510022761706}
   - component: {fileID: 54178422337692618}
   - component: {fileID: 65978543357755790}
-  - component: {fileID: 114741209448207656}
   m_Layer: 8
   m_Name: SimpleZombie
   m_TagString: Enemy
@@ -427,8 +426,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1545669708245476}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -6.93, y: 3.5601605e-17, z: -1.23}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 8.273666, y: 0, z: 51.24289}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4797950037450092}
   - {fileID: 4933370573938194}
@@ -721,7 +720,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1812629850243204}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.38, y: 8.19, z: 0.06}
+  m_LocalPosition: {x: -0.38, y: 8.81, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4197745662164436}
@@ -740,7 +739,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &65978543357755790
 BoxCollider:
@@ -1068,7 +1067,7 @@ Light:
   m_Type: 0
   m_Color: {r: 0.8018868, g: 0, b: 0, a: 1}
   m_Intensity: 16
-  m_Range: 3
+  m_Range: 15
   m_SpotAngle: 49
   m_CookieSize: 10
   m_Shadows:
@@ -1171,20 +1170,6 @@ MonoBehaviour:
     type: 2}
   BreakTrigger: 0.6
   BreakForce: 2
---- !u!114 &114741209448207656
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1545669708245476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a5727da41724b14d96d63f5a3ad89d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RedBar: {fileID: 2800000, guid: 18e2ff1d451834543904126f62d5eb65, type: 3}
-  GreenBar: {fileID: 2800000, guid: 52a0b86a66ab743af98c4135d7f3e480, type: 3}
-  MaxLength: 45
 --- !u!114 &114867700971720832
 MonoBehaviour:
   m_ObjectHideFlags: 1
