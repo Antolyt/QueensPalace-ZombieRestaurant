@@ -7,6 +7,9 @@ public class AIFollowingPath : BaseAI
 
     public WayPoint TargetPoint;
 
+    public delegate void DelOnReachTarget();
+    public DelOnReachTarget OnReachTarget;
+
     Animator _animator;
 
     protected override void Start()
@@ -37,8 +40,10 @@ public class AIFollowingPath : BaseAI
 
                 if (TargetPoint != null)
                     MovePosition = TargetPoint.transform.position;
-                else
-                    Destroy(gameObject);
+                {
+                    if (OnReachTarget != null)
+                        OnReachTarget();
+                }
             }
         }
     }

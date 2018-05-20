@@ -23,6 +23,11 @@ public class Annahme : MonoBehaviour {
         producer.freePlates++;
     }
 
+    void IncrementIngredients()
+    {
+        //+++++++++
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (_pp.HasPlate())
@@ -34,6 +39,9 @@ public class Annahme : MonoBehaviour {
 
                 FriendlyZombie help = obj.GetComponent<FriendlyZombie>();
                 help.Target = SpawnPosition;
+
+                AIFollowingPath ai = obj.GetComponent<AIFollowingPath>();
+                ai.OnReachTarget += IncrementIngredients;
             }
             _pp.DEstroyPlate();
             Invoke("InctrimentPlates", sriviceTime);
