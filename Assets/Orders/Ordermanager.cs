@@ -9,9 +9,17 @@ public class Ordermanager : MonoBehaviour {
     private List<Order> _orders;
     public float spawnsPerSecond;
     private int _amountSpawnedOrders;
+    private readonly float liveTime = 10F;
 
 	void Start () {
         _orders = new List<Order>();
+    }
+    public void Destroy(int id) {
+        _orders.RemoveAt(id);
+        for (int i = id; i < _orders.Count; ++i)
+        {
+            _orders[i].transform.localPosition += new Vector3(-160F, 0F, 0F);
+        }
     }
     public void AceptPlate(Food[] foods)
     {
@@ -43,7 +51,7 @@ public class Ordermanager : MonoBehaviour {
             int row = (int)(_orders.Count - 1) / 6;
             int col = (int)((_orders.Count - 1)) % 6;
             _newOrder.GetComponent<RectTransform>().anchoredPosition = new Vector2(40F + 160F * col, -80F * row);
-            _newOrder.Init(_amountSpawnedOrders++);
+            _newOrder.Init(_amountSpawnedOrders++, liveTime, this);
             _orders.Add(_newOrder);
             _newOrder = null;
         }
