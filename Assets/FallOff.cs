@@ -12,6 +12,9 @@ public class FallOff : MonoBehaviour
 
     EntityAttribute _attr;
 
+    [SerializeField]
+    GameObject AudioSource;
+
     [Range(0, 1)]
     public float BreakTrigger;
     public float BreakForce;
@@ -23,7 +26,7 @@ public class FallOff : MonoBehaviour
             _attr = e.Attr;
     }
 
-    private void Update()
+    public void Update()
     {
         if (_attr != null)
         {
@@ -32,7 +35,7 @@ public class FallOff : MonoBehaviour
 
                 SkinnedMeshRenderer rend = GetComponent<SkinnedMeshRenderer>();
                 rend.materials = new Material[0];
-                if(Remove != null)
+                if (Remove != null)
                     Remove.materials = new Material[0];
                 for (int i = 0; i < Amount; ++i)
                 {
@@ -46,6 +49,8 @@ public class FallOff : MonoBehaviour
                         rgdb.AddForce(par * BreakForce);
                     }
                 }
+                if (AudioSource != null)
+                    Instantiate(AudioSource);
 
                 enabled = false;
             }

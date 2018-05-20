@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class Entity : MonoBehaviour {
+public class Entity : MonoBehaviour
+{
 
     public EntityAttribute Attr;
 
@@ -12,7 +13,8 @@ public class Entity : MonoBehaviour {
     BaseAI _aiScript;
 
     // Use this for initialization
-    protected virtual void Start () {
+    protected virtual void Start()
+    {
 
         _memory = GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>();
         _rgdb = GetComponent<Rigidbody>();
@@ -33,16 +35,24 @@ public class Entity : MonoBehaviour {
             _aiScript.Attr = Attr;
         }
 
-        if(Attr.AttackScript != null)
+        if (Attr.AttackScript != null)
         {
             gameObject.AddComponent(Attr.AttackScript);
         }
     }
-	
-	// Update is called once per frame
-	protected virtual void Update () {
 
+    // Update is called once per frame
+    protected virtual void Update()
+    {
         if (Attr.Health <= 0)
+        {
+            FallOff[] help = GetComponentsInChildren<FallOff>();
+            foreach(FallOff c in help)
+            {
+                c.Update();
+            }
+
             Destroy(gameObject);
-	}
+        }
+    }
 }

@@ -12,6 +12,9 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField]
     PlayerMovement _input;
 
+    [SerializeField]
+    AudioSource _audioShoot;
+
     private Animator _animator;
     private Weapon _currWeapon;
     private int _weaponIndex = 0;
@@ -58,6 +61,8 @@ public class WeaponHandler : MonoBehaviour
     {
         if (_animator != null)
             _animator.SetBool("Shoot", true);
+        if (_audioShoot != null)
+            _audioShoot.Play();
     }
 
     private Weapon PrevWeapon()
