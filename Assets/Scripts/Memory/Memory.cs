@@ -72,7 +72,7 @@ public class Memory : MonoBehaviour {
             MaxHealth = 10, 
             Range = 1,
             Speed = 100,
-            ViewingDistance = 8,
+            ViewingDistance = 16,
             AttackScript = typeof(AttackScript)
         }).Set(typeof(FriendlyZombie), new EntityAttribute
         {
