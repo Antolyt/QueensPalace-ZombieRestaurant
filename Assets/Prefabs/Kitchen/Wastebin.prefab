@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1552806044506344}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.63}
   m_LocalScale: {x: 180, y: 180, z: 160}
   m_Children: []
   m_Father: {fileID: 4482633306746588}
@@ -166,6 +166,7 @@ MonoBehaviour:
   plate: {fileID: 0}
   isProducer: 0
   isDestructr: 1
+  isTrash: 1
 --- !u!136 &136736294213693592
 CapsuleCollider:
   m_ObjectHideFlags: 1
