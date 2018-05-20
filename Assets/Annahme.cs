@@ -3,26 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Annahme : MonoBehaviour {
+
+    public GameObject SpawnObject;
+    public WayPoint SpawnPosition;
+
     public PlateProducer producer;
     private PlatePlace _pp;
     private Ordermanager _om;
     public float sriviceTime = 3F;
+
     // Use this for initialization
     void Start () {
         _pp = GetComponent<PlatePlace>();
         _om = GameObject.FindGameObjectWithTag("Orders").GetComponent<Ordermanager>();
 	}
+
 	private void InctrimentPlates()
     {
         producer.freePlates++;
     }
+
 	// Update is called once per frame
 	void Update () {
         if (_pp.HasPlate())
         {
             if(_pp.Checkout(_om))
             {
-                Debug.Log("Valid Food"); // BEtselllung angenommen
+                GameObject obj = Instantiate(SpawnObject);
+                obj.transform.position = SpawnPosition.transform.position;
+
+                FriendlyZombie help = obj.GetComponent<FriendlyZombie>();
+                help.Target = SpawnPosition;
             }
             _pp.DEstroyPlate();
             Invoke("InctrimentPlates", sriviceTime);
