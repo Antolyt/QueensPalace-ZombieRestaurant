@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour {
 
     public float SpawnTime;
     public GameObject SpawnObject;
+    public int Amount;
 
     double timer;
 	
@@ -15,17 +16,20 @@ public class Spawner : MonoBehaviour {
 
         if(timer >= SpawnTime)
         {
-            GameObject obj = Instantiate(SpawnObject);
-            obj.transform.position = transform.position;
-
-            FriendlyZombie ai = obj.GetComponent<FriendlyZombie>();
-            if (ai != null)
+            for(int i = 0; i < Amount; ++i)
             {
-                WayPoint wayPoint = GetComponentInParent<WayPoint>();
-                if (wayPoint != null)
+                GameObject help = Instantiate(SpawnObject);
+                help.transform.position = transform.position;
+
+                FriendlyZombie ai = help.GetComponent<FriendlyZombie>();
+                if (ai != null)
                 {
-                    ai.Target = wayPoint;
-                    ai.enabled = true;
+                    WayPoint wayPoint = GetComponentInParent<WayPoint>();
+                    if (wayPoint != null)
+                    {
+                        ai.Target = wayPoint;
+                        ai.enabled = true;
+                    }
                 }
             }
 
