@@ -10,6 +10,9 @@ public class Order : MonoBehaviour {
 
     public Food.FoodState[] states;
     public Food.BodyPart[] parts;
+    private float _liveTime;
+    private Ordermanager _om;
+    private int _id;
 
     public Order()
     {
@@ -45,8 +48,11 @@ public class Order : MonoBehaviour {
         }
         return false;
     }
-    public void Init(int id)
+    public void Init(int id, float liveTime, Ordermanager om)
     {
+        _id = id;
+        _om = om;
+        _liveTime = liveTime;
         numFoots = 1;
         if (Random.value * idF > 10)
             numFoots++;
@@ -128,5 +134,11 @@ public class Order : MonoBehaviour {
             ++i;
         }
         return true;
+    }
+    void Upadte()
+    {
+        _liveTime -= Time.deltaTime;
+        if (_liveTime <= 0F)
+            _om.Destroy(_id);
     }
 }

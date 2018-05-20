@@ -8,6 +8,7 @@ public class PlatePlace : MonoBehaviour {
     private CarrayObject _carray = null;
     public bool isProducer = false;
     public bool isDestructr = false;
+    public bool isTrash = false;
     public bool HasPlate() { return plate != null; }
     public void DEstroyPlate() { if (isDestructr) { Destroy(plate); plate = null; } }
     public void Checkout (Ordermanager om)
@@ -40,9 +41,16 @@ public class PlatePlace : MonoBehaviour {
                     Debug.LogError("no GameObjectz");
             }
             else if (!isProducer && otherCarry.HasPlate() && plate == null) {
-                plate = otherCarry.GetPlate();
-                plate.transform.parent = GetComponent<Transform>();
-                plate.transform.localPosition = new Vector3(0F, 0F, 0F);
+                if (isTrash)
+                {
+                    otherCarry.ClearPlate();
+                }
+                else
+                {
+                    plate = otherCarry.GetPlate();
+                    plate.transform.parent = GetComponent<Transform>();
+                    plate.transform.localPosition = new Vector3(0F, 0F, 0F);
+                }
                 if (_carray.HasFood())
                 {
                     if (plate.GetComponent<Plate>().PlaceFood(_carray.GetFoodInfo()))

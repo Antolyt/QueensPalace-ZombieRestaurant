@@ -37,6 +37,11 @@ public class CarrayObject : MonoBehaviour {
         }
         return false;
     }
+    public void ClearPlate()
+    {
+        if (_plate != null)
+            _plate.GetComponent<Plate>().ClearPlate();
+    }
     public GameObject GetPlate() {
         if(_isPlayer)
         {

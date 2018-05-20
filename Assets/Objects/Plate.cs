@@ -54,6 +54,11 @@ public class Plate : MonoBehaviour {
         }
         return false;
     }
+    public void ClearPlate()
+    {
+        _amountFoods = 0;
+        _foods = new Food[MAX_AMOUNT_FOOD];
+    }
 	void Start () {
         GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>().SetAttribute(this);
         _foods = new Food[MAX_AMOUNT_FOOD] { null , null, null};

@@ -23,10 +23,10 @@ public class TrashCan : MonoBehaviour {
                 Debug.LogError("notEmpty, but has no Food");
             Debug.Log("Destroy Object");
         }
-        if (_myPlace != null && _myPlace.HasPlate())
+        /* if (_myPlace != null && _myPlace.HasPlate())
         {
-            _myPlace.DEstroyPlate();
+            // _myPlace.DEstroyPlate();
             Debug.Log("Destroy Plate");
-        }
+        }*/
     }
 }
