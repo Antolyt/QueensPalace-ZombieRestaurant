@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MeetProducer : MonoBehaviour {
     private CarrayObject _myCarry;
-    private Food _head = new Food(Food.BodyPart.HEAD);
 	void Start () {
         _myCarry = this.GetComponent<CarrayObject>();
-        _myCarry.GiveFood(_head);
+        _myCarry.GiveFood(new Food(Food.BodyPart.HEAD));
     }
 	void Update () {
-        _myCarry.GiveFood(_head);
+        if(!_myCarry.HasFood())
+            _myCarry.GiveFood(new Food(Food.BodyPart.HEAD));
     }
 }

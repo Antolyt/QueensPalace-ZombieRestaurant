@@ -39,8 +39,8 @@ public class TimerSphere : MonoBehaviour {
             return;
         _blink = -1F;
         if (_lastColor != blinkColor) {
-            _lastColor = blinkColor;
             _progressMat.color = _lastColor;
+            _lastColor = blinkColor;
         }
         _progress = progress;
         float f = _progress * 20;

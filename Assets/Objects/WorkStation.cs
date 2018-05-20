@@ -13,6 +13,14 @@ public class WorkStation : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         // this.GetComponent<MeshRenderer>().material.color = Color.red;
     }
+    private float Cap(float min, float max, float val)
+    {
+        if (val < min)
+            return min;
+        if (val > max)
+            return max;
+        return val;
+    }
     void OnTriggerStay(Collider other) {
         if (other.GetComponent<ColliderCounter>().CollideOnlyOnInteractivObject() && other.GetComponent<PlayerMovement>().GetButtonDown("B1")) {
             // this.GetComponent<MeshRenderer>().material.color = Color.yellow;
@@ -35,7 +43,7 @@ public class WorkStation : MonoBehaviour {
                 {
                     _timerVis = false;
                     _timer.gameObject.SetActive(_timerVis);
-                    _timer.SetProgress(_myCarry.GetFoodProgress());
+                    _timer.SetProgress(Cap(0F, 1F,_myCarry.GetFoodProgress()));
                 }
             }
             else if (!isDestructor && !isProducer && _myCarry.HasFood() && otherCarry.HasFood()) {
