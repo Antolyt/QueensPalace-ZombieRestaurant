@@ -133,8 +133,8 @@ public class CarrayObject : MonoBehaviour {
             if (tag == "Player")
             {
                 _isPlayer = true;
-                GetComponent<Animator>().SetBool("IsInKitchen", true);
-                GetComponentInChildren<Pistol>().gameObject.SetActive(false);
+                // GetComponent<Animator>().SetBool("IsInKitchen", true);
+                // GetComponentInChildren<Pistol>().gameObject.SetActive(false);
                 _lefthand = gameObject.transform.GetChild(0).GetChild(0).GetChild(0);
                 if (_lefthand == null)
                     Debug.LogError("no Object with name Left Hand");
