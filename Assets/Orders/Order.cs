@@ -125,6 +125,7 @@ public class Order : MonoBehaviour {
             return true;
         for (int i = 0; i < parts.Length; ++i)
         {
+            Debug.Log(parts[i] + "----" + states[i]);
             if (food.part == parts[i] && food.state == states[i])
                 return true;
         }
@@ -136,11 +137,13 @@ public class Order : MonoBehaviour {
         foreach (Food f in foods)
             if (f != null)
                 l++;
+
         if (!(l == numFoots))
         {
             // Debug.Log(numFoots.ToString()+ "<-mylength, searched " + l.ToString());
             return false;
         }
+
         int i = 0;
         foreach(Food f in foods)
         {
@@ -149,6 +152,7 @@ public class Order : MonoBehaviour {
             ++i;
         }
         i = foods.Length;
+
         return true;
     }
     void Start()
@@ -175,5 +179,10 @@ public class Order : MonoBehaviour {
             _om.kaputt(this);
             _run = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("Order destroyed");
     }
 }

@@ -18,6 +18,7 @@ public class Ordermanager : MonoBehaviour {
     {
         bool finish = false;
         Order de = null;
+
         foreach ( Order o in _orders)
         {
             if (finish)
@@ -30,8 +31,13 @@ public class Ordermanager : MonoBehaviour {
                 finish = true;
             }
         }
+
         if (finish)
+        {
             _orders.Remove(de);
+
+        }
+
         return finish;
     }
     public void kaputt(Order obj)
@@ -55,8 +61,9 @@ public class Ordermanager : MonoBehaviour {
     {
         return _orders;
     }
-	void Update () {
-		if (_orders.Count < maxOrders && Random.value < Time.deltaTime * spawnsPerSecond)
+	void Update ()
+    {
+        if (_orders.Count < maxOrders && Random.value < Time.deltaTime * spawnsPerSecond)
         {
             _newOrder = Instantiate(page, transform.GetChild(0).transform);
             int row = (int)(_orders.Count - 1) / 6;
@@ -64,7 +71,6 @@ public class Ordermanager : MonoBehaviour {
             _newOrder.GetComponent<RectTransform>().anchoredPosition = new Vector2(40F + 160F * col, -80F * row);
             _newOrder.Init(_orders.Count, liveTime, this);
             _orders.Add(_newOrder);
-            _newOrder = null;
         }
 	}
 }
