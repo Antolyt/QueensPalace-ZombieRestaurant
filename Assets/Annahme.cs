@@ -20,7 +20,10 @@ public class Annahme : MonoBehaviour {
 	void Update () {
         if (_pp.HasPlate())
         {
-            _pp.Checkout(_om);
+            if(_pp.Checkout(_om))
+            {
+                Debug.Log("Valid Food"); // BEtselllung angenommen
+            }
             _pp.DEstroyPlate();
             Invoke("InctrimentPlates", sriviceTime);
         }

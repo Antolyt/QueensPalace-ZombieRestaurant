@@ -14,7 +14,7 @@ public class Ordermanager : MonoBehaviour {
 	void Start () {
         _orders = new List<Order>();
     }
-    public void AceptPlate(Food[] foods)
+    public bool AceptPlate(Food[] foods)
     {
         bool finish = false;
         Order de = null;
@@ -32,6 +32,7 @@ public class Ordermanager : MonoBehaviour {
         }
         if (finish)
             _orders.Remove(de);
+        return finish;
     }
     public void kaputt(Order obj)
     {

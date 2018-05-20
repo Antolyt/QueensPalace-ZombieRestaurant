@@ -11,9 +11,9 @@ public class Plate : MonoBehaviour {
     public int NumFreeSlots() {
         return MAX_AMOUNT_FOOD - _amountFoods;
     }
-    public void Checkout(Ordermanager om)
+    public bool Checkout(Ordermanager om)
     {
-        om.AceptPlate(_foods);
+        return om.AceptPlate(_foods);
     }
     private bool IsAlreadyOnPlate(Food food) {
         foreach (Food f in _foods)

@@ -12,10 +12,11 @@ public class PlatePlace : MonoBehaviour {
 
     public bool HasPlate() { return plate != null; }
     public void DEstroyPlate() { if (isDestructr) {Destroy(plate.gameObject); plate = null; } }
-    public void Checkout (Ordermanager om)
+    public bool Checkout (Ordermanager om)
     {
         if (plate != null)
-            plate.GetComponent<Plate>().Checkout(om);
+            return plate.GetComponent<Plate>().Checkout(om);
+        return false;
     }
     public void RescivePlate(Plate newPlate)
     {
