@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Memory : MonoBehaviour {
-
+    public FootTransformer[] bodyParts = null;
     private Dictionary<Type, WeaponAttribute> _weaponDictionary = new Dictionary<Type, WeaponAttribute>();
     private Dictionary<Type, BulletAttribute> _bulletDictionary = new Dictionary<Type, BulletAttribute>();
     private Dictionary<Type, EntityAttribute> _entityDictionary = new Dictionary<Type, EntityAttribute>();
 
     // Use this for initialization
     void Awake () {
-
         _weaponDictionary.Set(typeof(Pistol), new WeaponAttribute
         {
             ReloadTime = 1f,
@@ -91,6 +90,11 @@ public class Memory : MonoBehaviour {
             Health = 100,
             MaxHealth = 100
         });
+    }
+
+    public void SetAttribute(CarrayObject obj)
+    {
+        obj.mets = bodyParts;
     }
 
     public void SetAttribute(AttackScript obj)

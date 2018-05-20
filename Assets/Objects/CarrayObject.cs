@@ -5,13 +5,13 @@ using UnityEngine;
 public class CarrayObject : MonoBehaviour {
 
     private Food _food = null;
-    public FootTransformer meet;
     private FootTransformer _footObj;
     private GameObject _plate = null;
     private bool _isWorstation;
     private bool _isPlayer;
     private bool _isPlatePlace;
     private Food.WorkStaitionType _type;
+    public FootTransformer[] mets = null;
     public bool HasFood() {
         return _food != null;
     }
@@ -51,14 +51,14 @@ public class CarrayObject : MonoBehaviour {
             _food = food;
             if (_isWorstation || _isPlatePlace)
             {
-                _footObj = Instantiate(meet, transform.position + new Vector3(0F, 2F), Quaternion.identity);
+                _footObj = Instantiate(mets[(int)food.part], transform.position + new Vector3(0F, 2F), Quaternion.identity);
                 _footObj.transform.parent = transform;
                 _footObj.SetFood(_food);
                 return _food.PlaceOnWorkstation(_type, _footObj);
             }
             else if (_isPlayer)
             {
-                _footObj = Instantiate(meet, transform.position + new Vector3(0F, 0F, 2F), Quaternion.identity);
+                _footObj = Instantiate(mets[(int)food.part], transform.position + new Vector3(0F, 0F, 2F), Quaternion.identity);
                 _footObj.transform.parent = transform;
                 _footObj.SetFood(_food);
             }
@@ -89,6 +89,7 @@ public class CarrayObject : MonoBehaviour {
         return _food;
     }
 	void Start () {
+        GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>().SetAttribute(this);
         WorkStation ws =  GetComponent<WorkStation>();
         _isWorstation = false;
         _isPlayer = false;
@@ -117,7 +118,8 @@ public class CarrayObject : MonoBehaviour {
         }
     }
 	void Update () {
-        GetComponent<MeshRenderer>().material.color = IsEmpty() ? Color.red : Color.blue;
+        if (GetComponent<MeshRenderer>() != null)
+            GetComponent<MeshRenderer>().material.color = IsEmpty() ? Color.red : Color.blue;
         if (HasFood())
             _food.Update();
     }
