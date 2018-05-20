@@ -68,7 +68,7 @@ public class Ordermanager : MonoBehaviour {
             _newOrder = Instantiate(page, transform.GetChild(0).transform);
             int row = (int)(_orders.Count - 1) / 6;
             int col = (int)((_orders.Count - 1)) % 6;
-            _newOrder.GetComponent<RectTransform>().anchoredPosition = new Vector2(40F + 160F * col, -80F * row);
+            _newOrder.GetComponent<RectTransform>().anchoredPosition = new Vector2(200F + 160F * col, -80F * row);
             _newOrder.Init(_orders.Count, liveTime, this);
             _orders.Add(_newOrder);
         }
