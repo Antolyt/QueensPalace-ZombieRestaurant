@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 114280615755717290}
   - component: {fileID: 114671291954825310}
   - component: {fileID: 222812212367089326}
+  - component: {fileID: 136085692874730964}
   m_Layer: 0
   m_Name: Bar
   m_TagString: Untagged
@@ -3187,6 +3188,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mets: []
+--- !u!136 &136085692874730964
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273489579123772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.5309944
+  m_Height: 5.919236
+  m_Direction: 2
+  m_Center: {x: 0.2914772, y: 0, z: 0.898818}
 --- !u!136 &136940712967678120
 CapsuleCollider:
   m_ObjectHideFlags: 1
