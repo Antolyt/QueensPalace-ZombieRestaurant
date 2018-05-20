@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class AttackScript : MonoBehaviour
@@ -7,6 +8,7 @@ public class AttackScript : MonoBehaviour
 
     public WeaponAttribute Attr;
 
+    Animator _animCtrl;
     Memory _memory;
     Rigidbody _rgdb;
     double timer;
@@ -16,6 +18,7 @@ public class AttackScript : MonoBehaviour
     {
         _memory = GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>();
         _rgdb = GetComponent<Rigidbody>();
+        _animCtrl = GetComponent<Animator>();
 
         if (_memory == null)
         {
@@ -38,6 +41,7 @@ public class AttackScript : MonoBehaviour
         Entity script = collision.gameObject.GetComponent<Entity>();
         if (script != null && timer >= Attr.ShootDelay && !collision.gameObject.CompareTag("Enemy"))
         {
+            _animCtrl.SetBool("Attack", true);
             script.Attr.Attack(Attr.Damage);
             timer = 0;
 
@@ -49,5 +53,7 @@ public class AttackScript : MonoBehaviour
             _rgdb.AddForce(dir * -1 * Attr.Force / 2);
             eRgdb.AddForce(dir * Attr.Force / 2);
         }
+        else
+            _animCtrl.SetBool("Attack", false);
     }
 }

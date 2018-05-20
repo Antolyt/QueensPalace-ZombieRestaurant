@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseAI : MonoBehaviour {
+public class BaseAI : MonoBehaviour
+{
 
     public EntityAttribute Attr;
 
@@ -21,7 +22,7 @@ public class BaseAI : MonoBehaviour {
         set;
     }
 
-    public virtual Vector3 MovePosition 
+    public virtual Vector3 MovePosition
     {
         get { return _movePosition; }
         set { _movePosition = value; }
@@ -31,8 +32,15 @@ public class BaseAI : MonoBehaviour {
     {
         Vector3 dir = _movePosition - transform.position;
         dir.Normalize();
+        if (!MovePosition.Equals(Vector3.zero) && !dir.Equals(Vector3.zero))
+        {
+            transform.rotation = Quaternion.LookRotation(dir);
+            transform.Rotate(new Vector3(0, 90, 0));
+            _rgdb.AddForce(dir * Force);
+        }
 
-        _rgdb.AddForce(dir * Force);
+
+
     }
 
 }
