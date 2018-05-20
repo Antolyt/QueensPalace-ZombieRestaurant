@@ -10,6 +10,7 @@ TagManager:
   - Friendly
   - Wall
   - Orders
+  - Wapon
   layers:
   - Default
   - TransparentFX

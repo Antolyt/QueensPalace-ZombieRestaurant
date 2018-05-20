@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 114682920294603334}
   - component: {fileID: 114592850526989712}
   - component: {fileID: 114766528863704704}
+  - component: {fileID: 136628743563467830}
   m_Layer: 0
   m_Name: TellerAnnahme
   m_TagString: Untagged
@@ -3194,6 +3195,19 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273489579123772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.5309944
+  m_Height: 5.919236
+  m_Direction: 2
+  m_Center: {x: 0.2914772, y: 0, z: 0.898818}
+--- !u!136 &136628743563467830
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1641897328216984}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

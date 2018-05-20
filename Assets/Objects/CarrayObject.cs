@@ -43,6 +43,8 @@ public class CarrayObject : MonoBehaviour {
             _plate.GetComponent<Plate>().ClearPlate();
     }
     public GameObject GetPlate() {
+        if (_plate == null)
+            return null;
         if(_isPlayer)
         {
             GetComponent<Animator>().SetBool("HasPlate", false);
@@ -122,6 +124,13 @@ public class CarrayObject : MonoBehaviour {
     public Food GetFoodInfo() {
         return _food;
     }
+    public void Hide(bool flag)
+    {
+        if (_footObj != null)
+            _footObj.gameObject.SetActive(flag);
+        if (_plate != null)
+            _plate.SetActive(flag);
+    }
 	void Start () {
         GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>().SetAttribute(this);
         WorkStation ws =  GetComponent<WorkStation>();
@@ -135,7 +144,7 @@ public class CarrayObject : MonoBehaviour {
                 _isPlayer = true;
                 // GetComponent<Animator>().SetBool("IsInKitchen", true);
                 // GetComponentInChildren<Pistol>().gameObject.SetActive(false);
-                _lefthand = gameObject.transform.GetChild(0).GetChild(0).GetChild(0);
+                _lefthand = gameObject.transform.GetChild(1).GetChild(0).GetChild(0);
                 if (_lefthand == null)
                     Debug.LogError("no Object with name Left Hand");
             }
