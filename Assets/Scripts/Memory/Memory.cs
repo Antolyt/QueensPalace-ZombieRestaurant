@@ -59,8 +59,8 @@ public class Memory : MonoBehaviour {
         }).Set(typeof(ShotgunBullet), new BulletAttribute
         {
             Damage = 2f,
-            Speed = 2000f,
-            Lifetime = 0.15f
+            Speed = 500f,
+            Lifetime = 0.5f
         });
 
         _entityDictionary.Set(typeof(SimpleZombie), new EntityAttribute
