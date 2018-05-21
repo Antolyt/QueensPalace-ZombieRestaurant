@@ -6,10 +6,13 @@ public class MeetProducer : MonoBehaviour {
     public Food.BodyPart part;
     public FootTransformer[] meats;
     public int amountStore = 1;
+    public int amountPerZombie = 5;
+    public int maxStore = 10;
     private int _amtText = -1;
     private TextMesh _text = null;
     private FootTransformer _foodObj;
     private CarrayObject _myCarry;
+    public Prison prison;
 	void Start () {
         GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>().SetAttribute(this);
         _foodObj = Instantiate(meats[(int)part], transform.position + new Vector3(0F, 0.3f), Quaternion.identity);

@@ -15,6 +15,8 @@ public class Annahme : MonoBehaviour {
     private Ordermanager _om;
     public float sriviceTime = 3F;
 
+    public Prison prison;
+
     // Use this for initialization
     void Start () {
         _newZombies = new List<GameObject>();
@@ -27,15 +29,6 @@ public class Annahme : MonoBehaviour {
         producer.freePlates++;
     }
 
-    void IncrementIngredients()
-    {
-        Debug.Log("Get Meat");
-        foreach(MeetProducer mp in partProducers)
-        {
-            mp.amountStore+=5;
-        }
-    }
-
     // Update is called once per frame
 	void Update () {
         if(_newZombies.Count > 0)
@@ -46,7 +39,7 @@ public class Annahme : MonoBehaviour {
                 AIFollowingPath ai = z.GetComponent<AIFollowingPath>();
                 if (ai != null)
                 {
-                    ai.OnReachTarget += IncrementIngredients;
+                    ai.OnReachTarget += prison.AddZombie;
                     buffer.Add(z);
                 }
             }
