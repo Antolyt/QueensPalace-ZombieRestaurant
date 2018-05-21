@@ -14,7 +14,7 @@ public class Prison : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         zombieLocations.AddRange(zombieLocation.GetComponentsInChildren<Transform>());
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -43,7 +43,9 @@ public class Prison : MonoBehaviour {
         numberOfZombies++;
         if(numberOfZombies <= 5)
         {
-            Instantiate<GameObject>(zombie).transform.parent = zombieLocations[numberOfZombies - 1];
+            GameObject zombieCopy = Instantiate<GameObject>(zombie);
+            zombieCopy.transform.parent = zombieLocations[numberOfZombies - 1];
+            zombieCopy.transform.localPosition = Vector3.zero;
         }
     }
 }
