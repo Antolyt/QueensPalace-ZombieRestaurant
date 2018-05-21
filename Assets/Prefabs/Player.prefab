@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4236071962661690}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Eye_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4151761345399804}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_left_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4784095691280636}
   - component: {fileID: 137581923715337164}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Foot_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4988645532424110}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4285141408522902}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Foot_left_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4660227900133740}
   - component: {fileID: 137083244915761774}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4688625324597146}
   - component: {fileID: 137766973209786924}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4937235682043558}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 114160494227105824}
   - component: {fileID: 114637819466138490}
   - component: {fileID: 82190465423726504}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4664949689998192}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Eye_right_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4366021827579676}
   - component: {fileID: 137784433219568270}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4518477704405000}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Foot_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 114051818338078428}
   - component: {fileID: 114231826735086802}
   - component: {fileID: 114948145179266808}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4789279273645404}
   - component: {fileID: 137805331161908004}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4452000459027826}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4590195705328412}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Foot_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4366482163946550}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Head 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4279326101253108}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Eye_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4191735970834974}
   - component: {fileID: 137421625658763048}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Foot_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4009899191318158}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_right_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4561082604121804}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Foot_right_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4597346129544720}
   - component: {fileID: 137953682740725056}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hand_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4150900324872708}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Body 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4103575936587608}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Eye_left_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4791723888201538}
   - component: {fileID: 137472068589442220}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: ChefHat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,8 +440,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1871444696793526}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0008771854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4988645532424110}
@@ -537,7 +537,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769365518137434}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.014807663, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0147829475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4236071962661690}
@@ -713,7 +713,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1552915887539050}
   m_LocalRotation: {x: -0.000000026692543, y: 0.00000002669254, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: -0.0045183417, y: 0.011373758, z: 0.012430955}
+  m_LocalPosition: {x: -0.0045183417, y: 0.011347172, z: 0.012430955}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4009899191318158}
@@ -750,7 +750,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272741127788366}
   m_LocalRotation: {x: -0.000000026692543, y: 0.00000002669254, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: -0.0045183417, y: 0.011373758, z: -0.012430955}
+  m_LocalPosition: {x: -0.0045183417, y: 0.011347172, z: -0.012430955}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4151761345399804}
@@ -767,10 +767,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 10
   m_AngularDrag: 10
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &65926137701975210
 BoxCollider:
@@ -999,7 +999,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668502339618742}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 543a44d449930834fa961171f40f0b38, type: 3}
   m_Name: 
@@ -1032,14 +1032,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon:
-    name: 
-    ReloadTime: 0
-    ShootDelay: 0
-    Ammo: 0
-    MaxAmmo: 0
-    SprayAngle: 0
-    AmountShootBullets: 0
-    Force: 0
+    name: Shotgun
+    ReloadTime: 2
+    ShootDelay: 0.4
+    Ammo: 24
+    MaxAmmo: 32
+    SprayAngle: 15
+    AmountShootBullets: 8
+    Force: 10
     Damage: 0
 --- !u!137 &137083244915761774
 SkinnedMeshRenderer:

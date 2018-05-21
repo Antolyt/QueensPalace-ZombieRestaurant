@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wapon
+  - Orders
+  - Friendly
+  - Enemy
+  - Memory
   layers:
   - Default
   - TransparentFX
@@ -14,12 +18,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyZombies
+  - FriendliThings
+  - Player
+  - Kitchen
+  - EnemyFreeArea
+  - Bullet
   - 
   - 
   - 
