@@ -2993,6 +2993,7 @@ MonoBehaviour:
   partProducers:
   - {fileID: 114562369754741514}
   - {fileID: 114167526264375376}
+  zombiesPerFoot: 5
   producer: {fileID: 114766528863704704}
   sriviceTime: 3
 --- !u!114 &114131433115848608
@@ -3274,7 +3275,7 @@ MonoBehaviour:
   page: {fileID: 114452322895397544, guid: 916fd8ab31ad57d4e99ddda44e879d98, type: 2}
   liveTime: 60
   maxOrders: 6
-  spawnsPerSecond: 10
+  spawnsPerSecond: 0.1
 --- !u!114 &114692364476909368
 MonoBehaviour:
   m_ObjectHideFlags: 1
