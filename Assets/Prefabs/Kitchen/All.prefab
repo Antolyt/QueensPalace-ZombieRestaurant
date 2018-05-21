@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4947797624387216}
   - component: {fileID: 33660584919937108}
   - component: {fileID: 23827520243674620}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4890980731157310}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TableSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4740960687833862}
   - component: {fileID: 33275390676199816}
   - component: {fileID: 23548009165566630}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: stove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 223555953486955614}
   - component: {fileID: 114932969002951186}
   - component: {fileID: 114965186667744720}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 23025455756111472}
   - component: {fileID: 114666003079407612}
   - component: {fileID: 222641785964208116}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 33300135800658506}
   - component: {fileID: 23261633834781930}
   - component: {fileID: 65500454724047468}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Ground (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 33081747829139842}
   - component: {fileID: 23155126000723640}
   - component: {fileID: 65418927922465262}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 4152531790479212}
   - component: {fileID: 23583701101353120}
   - component: {fileID: 102796926065272574}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 33025638924060640}
   - component: {fileID: 23644963219841230}
   - component: {fileID: 114372847413935250}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 33167570535041698}
   - component: {fileID: 23035040235116182}
   - component: {fileID: 65826935483409056}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 33993032227744734}
   - component: {fileID: 23161669246321072}
   - component: {fileID: 65571584764568540}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Ground (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4115061995736290}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TablePlatePlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 4110322135611534}
   - component: {fileID: 33575356894497200}
   - component: {fileID: 23266324732579188}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 114671291954825310}
   - component: {fileID: 222812212367089326}
   - component: {fileID: 136085692874730964}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 33653138710231650}
   - component: {fileID: 23911092818512070}
   - component: {fileID: 65809906760008192}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Ground (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4515598361263680}
   - component: {fileID: 114687610558881254}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Orders
   m_TagString: Orders
   m_Icon: {fileID: 0}
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 33386164742934108}
   - component: {fileID: 23982112323087228}
   - component: {fileID: 65852597690199866}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Ground (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 65344298978667988}
   - component: {fileID: 114078166064828298}
   - component: {fileID: 114987299866503332}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlatePlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 4018340909176254}
   - component: {fileID: 33531316724734130}
   - component: {fileID: 23375398385649666}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 65536254844610544}
   - component: {fileID: 114950779920182626}
   - component: {fileID: 114916372629762778}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlatePlace (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 4433998017151696}
   - component: {fileID: 33277324879102834}
   - component: {fileID: 23285697592653242}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -954,7 +954,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4456936821302008}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 199327669048839470}
   - component: {fileID: 114406284350513180}
   - component: {fileID: 198949148870048914}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Herd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4711624484923052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: oven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 199683922630249356}
   - component: {fileID: 114548487653463298}
   - component: {fileID: 198926104991215176}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Oven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,7 +1110,7 @@ GameObject:
   - component: {fileID: 33863032019777528}
   - component: {fileID: 23062686887521232}
   - component: {fileID: 65039421080873996}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1178,7 @@ GameObject:
   - component: {fileID: 4165292668518382}
   - component: {fileID: 33319599854307940}
   - component: {fileID: 23513493762198266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1213,7 +1213,7 @@ GameObject:
   - component: {fileID: 114592850526989712}
   - component: {fileID: 114766528863704704}
   - component: {fileID: 136628743563467830}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TellerAnnahme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 4494570454547410}
   - component: {fileID: 33271103661500676}
   - component: {fileID: 23360773536635472}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 4673727661009926}
   - component: {fileID: 23384669561640038}
   - component: {fileID: 102329532061174486}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,7 +1394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4085089552303000}
   - component: {fileID: 65690663465957430}
-  m_Layer: 15
+  m_Layer: 12
   m_Name: ZombieCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 33511517651601944}
   - component: {fileID: 23761744873145568}
   - component: {fileID: 65669698726766402}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1481,7 +1481,7 @@ GameObject:
   - component: {fileID: 65074351194547658}
   - component: {fileID: 114422546622061790}
   - component: {fileID: 114167526264375376}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpareribsProducer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 65186927123319730}
   - component: {fileID: 114005026692688262}
   - component: {fileID: 114562369754741514}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LiverProducer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1567,7 +1567,7 @@ GameObject:
   - component: {fileID: 4613786110656940}
   - component: {fileID: 33740529738754160}
   - component: {fileID: 23206128114184734}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1585,7 +1585,7 @@ GameObject:
   - component: {fileID: 33372932411098098}
   - component: {fileID: 23804723696261552}
   - component: {fileID: 114131433115848608}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1637,7 +1637,7 @@ GameObject:
   - component: {fileID: 114645876951025614}
   - component: {fileID: 114536062382717566}
   - component: {fileID: 114280851887411310}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wastebin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 4597699279961180}
   - component: {fileID: 65882735243840320}
   - component: {fileID: 114392461476924514}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RestaurantBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 33991531781974976}
   - component: {fileID: 23959740878819386}
   - component: {fileID: 114527908458194680}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6396,7 +6396,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 72
+  m_FontSize: 1
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 1c10051538e484e849e45b324b9b334b, type: 2}
@@ -6417,7 +6417,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 72
+  m_FontSize: 1
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 1c10051538e484e849e45b324b9b334b, type: 2}
