@@ -1,0 +1,162 @@
+[33mcommit 67aff7dfa021f5609eca8170a0302c4271f133ed[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: f364d5d 9a92b3d
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 07:43:44 2018 -0700
+
+    Merge remote-tracking branch 'refs/remotes/origin/master'
+
+[33mcommit 9a92b3d54b76fc74663262c5c109940ff9effbc1[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: johannes.hauffe <hauffej@yahoo.de>
+Date:   Mon May 21 16:33:36 2018 +0200
+
+    Final Polish
+
+[33mcommit f364d5d681fd04c03b31e044f12595c93dea5941[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 07:29:01 2018 -0700
+
+    add light effect to selectebal objects
+
+[33mcommit 3e28c3e353a1ef0f0d8f30ba91fa9f7cd1d908a8[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 07:11:22 2018 -0700
+
+    add Light
+
+[33mcommit dbfb80a3327a94aa7728e8eb7aa2cf908baf7b4e[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 07:03:11 2018 -0700
+
+    stuf
+
+[33mcommit fe4b8815fbd36482af709a0343375dd509ca38ea[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 06:50:00 2018 -0700
+
+    fixes TrashBin
+
+[33mcommit ab5aec95e19328b6f6232942111315e762b184e5[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 06:41:11 2018 -0700
+
+    minoor changes
+
+[33mcommit 5adf506a47ac3180bcffaa40e7b5e02c2a1a0cc2[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 06:05:44 2018 -0700
+
+    zombies -> food, change collider, kitchen y downto min
+
+[33mcommit 4671787a18a087538bc1a4c3488eb5888bea0f84[m
+Author: Tony Schwensfeier <finalcow@yahoo.de>
+Date:   Mon May 21 14:22:59 2018 +0200
+
+    fix: zombie position
+
+[33mcommit 324861e4ce92e81c82ee4bd06bb67b81363abbd2[m
+Merge: 242f477 25e7c99
+Author: Tony Schwensfeier <finalcow@yahoo.de>
+Date:   Mon May 21 14:08:06 2018 +0200
+
+    Merge branch 'master' of https://github.com/Antolyt/QueensPalace-ZombieRestaurant
+
+[33mcommit 242f477b605b8c96dfdb403773797b9b75db386b[m
+Merge: 3136c3e 79ced61
+Author: Tony Schwensfeier <finalcow@yahoo.de>
+Date:   Mon May 21 14:08:00 2018 +0200
+
+    Merge branch 'master' of https://github.com/Antolyt/QueensPalace-ZombieRestaurant
+    
+    # Conflicts:
+    #       Assets/Scenes/Gameplay.unity
+
+[33mcommit 25e7c990222bf64b2bce598d5c81e5a440912d71[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 05:06:09 2018 -0700
+
+    change Fonts
+
+[33mcommit 3136c3eaac192f9a5c46b9dd50fc0a30f97bcf77[m
+Author: Tony Schwensfeier <finalcow@yahoo.de>
+Date:   Mon May 21 14:04:59 2018 +0200
+
+    feat: prison logic
+
+[33mcommit 39ab46af553949536b597376ea2d64b821172597[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 04:51:59 2018 -0700
+
+    Change Number Font
+
+[33mcommit 79ced61feb10e63ab7476b545d2ff3e623d81048[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Mon May 21 04:41:20 2018 -0700
+
+    Fixes Layers
+
+[33mcommit 064372e085904c62943f5cafbd8962a597dea69d[m
+Author: Tony Schwensfeier <finalcow@yahoo.de>
+Date:   Mon May 21 11:10:08 2018 +0200
+
+    feat: Added fence & Prison to Scenes/Gameplay.unity
+
+[33mcommit c56046744e817d86063497b44c024afd7cc86221[m
+Merge: 254bf9b d54300e
+Author: Tony Schwensfeier <finalcow@yahoo.de>
+Date:   Mon May 21 10:50:38 2018 +0200
+
+    Merge branch 'master' of https://github.com/Antolyt/QueensPalace-ZombieRestaurant
+
+[33mcommit 254bf9b5d86045491ac6a8549b81d5bfdbf0089b[m
+Author: Tony Schwensfeier <finalcow@yahoo.de>
+Date:   Mon May 21 10:50:20 2018 +0200
+
+    Feat: PlayerRotation & Additions to Gameplay.unity
+
+[33mcommit d54300ed0c60b0d83bf6cb785ca3ee4ab85a3e71[m
+Author: Tobias Ehlert <rivwgk24@bitmessage.ch>
+Date:   Mon May 21 10:47:03 2018 +0200
+
+    added models for fence and gate
+
+[33mcommit 7c798b123905c2500138b48a20f799a82e304a58[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Sun May 20 17:03:37 2018 -0700
+
+    NumFixes
+
+[33mcommit e018aad8ba154106f2a6789cc8a842a2db9145ca[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Sun May 20 17:01:26 2018 -0700
+
+    added StoreAmount and Zombie Production and destruction
+
+[33mcommit 1ef97aad8b3e389608eb717277cbcc74e9af25d7[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Sun May 20 13:55:05 2018 -0700
+
+    fix Order Aligment
+
+[33mcommit 3c9da4622bdc0418f79cf38ae1b951625085f8e5[m
+Author: johannes.hauffe <hauffej@yahoo.de>
+Date:   Sun May 20 22:50:23 2018 +0200
+
+    Event added
+
+[33mcommit 3388e53ddadfd145b96f5dd28400d1f5bd94521e[m[33m ([m[1;31morigin/Dev-HanHan[m[33m)[m
+Author: johannes.hauffe <hauffej@yahoo.de>
+Date:   Sun May 20 22:40:22 2018 +0200
+
+    Order Bugfix
+
+[33mcommit 34d05551ec5643aca34e7a3b0f731005d18cb831[m
+Author: johannes.hauffe <hauffej@yahoo.de>
+Date:   Sun May 20 21:22:06 2018 +0200
+
+    afopwajfapfj
+
+[33mcommit 1f336586d32d20abadf3f26ed27100d2cf4bafca[m
+Author: Julian Benda <Zabuza98@gmx.net>
+Date:   Sun May 20 11:35:50 2018 -0700
+
+    change Annahme script

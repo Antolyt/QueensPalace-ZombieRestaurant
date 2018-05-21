@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WorkStation : MonoBehaviour {
+    public Light light = null;
     public bool isProducer = false;
     public bool isDestructor = false;
     private TimerSphere _timer;
@@ -11,8 +12,15 @@ public class WorkStation : MonoBehaviour {
     private CarrayObject _myCarry;
     private ParticleSystem _smoke;
 
-    void OnTriggerEnter(Collider other) {
-        // this.GetComponent<MeshRenderer>().material.color = Color.red;
+    void OnTriggerEnter(Collider other)
+    {
+        if (light != null)
+            light.enabled = true;
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (light != null)
+            light.enabled = false;
     }
     private float Cap(float min, float max, float val)
     {
@@ -63,9 +71,6 @@ public class WorkStation : MonoBehaviour {
                 _myCarry.GiveFood(buffer);
             }
         }
-    }
-    void OnTriggerExit(Collider other) {
-        // this.GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 	// Use this for initialization
 	void Start () {
