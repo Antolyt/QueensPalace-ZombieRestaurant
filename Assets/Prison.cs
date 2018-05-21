@@ -14,6 +14,8 @@ public class Prison : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         zombieLocations.AddRange(zombieLocation.GetComponentsInChildren<Transform>());
+        if(zombieLocations.Contains(zombieLocation.transform))
+            zombieLocations.Remove(zombieLocation.transform);
     }
 	
 	// Update is called once per frame
@@ -33,7 +35,7 @@ public class Prison : MonoBehaviour {
             numberOfZombies--;
             if (numberOfZombies < 5)
             {
-                Destroy(zombieLocations[numberOfZombies].GetChild(0));
+                Destroy(zombieLocations[numberOfZombies].GetChild(0).gameObject);
             }
         }
     }

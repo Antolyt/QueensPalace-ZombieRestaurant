@@ -49,10 +49,17 @@ public class MeetProducer : MonoBehaviour {
                 }
 
                 amountStore--;
+                if (amountStore == 0)
+                    _text.gameObject.SetActive(false);
             }
             else
             {
-                if(_foodObj.gameObject.activeSelf)
+                if(prison.numberOfZombies > 0)
+                {
+                    prison.FillProducersAndRemoveZombie();
+                    _text.gameObject.SetActive(true);
+                }
+                else if(_foodObj.gameObject.activeSelf)
                     _foodObj.gameObject.SetActive(false);
             }
         }
