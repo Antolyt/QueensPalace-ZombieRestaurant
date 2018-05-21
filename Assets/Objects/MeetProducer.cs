@@ -63,5 +63,10 @@ public class MeetProducer : MonoBehaviour {
                     _foodObj.gameObject.SetActive(false);
             }
         }
+        else if(amountStore > 0)
+        {
+            if (!_text.gameObject.activeSelf)
+                _text.gameObject.SetActive(true);
+        }
     }
 }

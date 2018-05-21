@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatePlace : MonoBehaviour {
 
     public GameObject plate = null;
+    public Light light = null;
     private CarrayObject _carray = null;
     public bool isProducer = false;
     public bool isDestructr = false;
@@ -28,6 +29,16 @@ public class PlatePlace : MonoBehaviour {
             plate.transform.localPosition = new Vector3(0F, 2.5f, 0.8f);
         else
             plate.transform.localPosition = new Vector3(0F, 0F, 0F);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (light != null)
+            light.enabled = true;
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (light != null)
+            light.enabled = false;
     }
     void OnTriggerStay(Collider other) {
         if ( other.GetComponent<ColliderCounter>().CollideOnlyOnInteractivObject() && other.GetComponent<PlayerMovement>().GetButtonDown("B1")) {

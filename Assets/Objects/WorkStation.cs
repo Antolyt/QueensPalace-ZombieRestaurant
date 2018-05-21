@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WorkStation : MonoBehaviour {
     public bool isProducer = false;
+    public Light light = null;
     public bool isDestructor = false;
     private TimerSphere _timer;
     private bool _timerVis = false;
@@ -13,6 +14,8 @@ public class WorkStation : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         // this.GetComponent<MeshRenderer>().material.color = Color.red;
+        if (light != null)
+            light.enabled = true;
     }
     private float Cap(float min, float max, float val)
     {
@@ -66,6 +69,8 @@ public class WorkStation : MonoBehaviour {
     }
     void OnTriggerExit(Collider other) {
         // this.GetComponent<MeshRenderer>().material.color = Color.blue;
+        if (light != null)
+            light.enabled = false;
     }
 	// Use this for initialization
 	void Start () {
