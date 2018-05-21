@@ -19,7 +19,6 @@ public class Order : MonoBehaviour {
     public float _liveTime = 4F;
     private float _maxTime = 4F;
     private Ordermanager _om;
-    private int _id;
 
     public Order()
     {
@@ -57,7 +56,6 @@ public class Order : MonoBehaviour {
     }
     public void Init(int id, float liveTime, Ordermanager om)
     {
-        _id = id;
         _om = om;
         _liveTime = liveTime;
         _maxTime = _liveTime;

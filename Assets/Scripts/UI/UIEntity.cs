@@ -6,8 +6,6 @@ public class UIEntity : MonoBehaviour
 {
     Entity _entity;
 
-    GameObject _player;
-
     public Texture RedBar;
     public Texture GreenBar;
     public float MaxLength;
@@ -20,7 +18,6 @@ public class UIEntity : MonoBehaviour
     {
         healthBarLength = MaxLength;
         _entity = GetComponent<Entity>();
-        _player = GameObject.FindGameObjectWithTag("Player");
         _weapon = GetComponent<WeaponHandler>();
     }
 
@@ -40,8 +37,8 @@ public class UIEntity : MonoBehaviour
 
         if (_weapon != null)
         {
-            int ammo = _weapon.Weapon.Attr.Ammo;
-            int maxAmmo = _weapon.Weapon.Attr.Ammo;
+            // int ammo = _weapon.Weapon.Attr.Ammo;
+            // int maxAmmo = _weapon.Weapon.Attr.Ammo;
 
             GUI.Box(new Rect(targetPos.x, targetPos.y - MaxLength / 2, MaxLength, 20), _weapon.Weapon.Attr.Ammo + "/" + _weapon.Weapon.Attr.MaxAmmo);
         }

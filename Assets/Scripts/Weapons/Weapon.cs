@@ -19,16 +19,10 @@ public class Weapon : MonoBehaviour {
 
     public HanHanAPI hanHanApi;
 
-    private void OnValidate()
-    {
+    protected virtual void Start () {
         _input = GetComponentInParent<PlayerMovement>();
         _memory = GameObject.FindGameObjectWithTag("Memory").GetComponent<Memory>();
         _rgdb = GetComponentInParent<Rigidbody>();
-    }
-
-
-    // Use this for initialization
-    protected virtual void Start () {
         OnShoot += ShootBullet;
 
         if (_input == null)
