@@ -87,7 +87,7 @@ public class PlatePlace : MonoBehaviour {
                 if (!otherCarry.HasPlate())
                     Debug.LogError("no Plate recived");
             }
-            else if(!isDestructr && !isProducer && otherCarry.HasFood() && _carray.IsEmpty())
+            else if((isTrash || !isDestructr && !isProducer) && otherCarry.HasFood() && _carray.IsEmpty())
             {
                 if (plate != null)
                 {

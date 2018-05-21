@@ -60,7 +60,8 @@ public class Plate : MonoBehaviour {
         _amountFoods = 0;
         _foods = new Food[MAX_AMOUNT_FOOD];
         foreach (FootTransformer ft in _assets)
-            Destroy(ft.gameObject);
+            if(ft != null)
+                Destroy(ft.gameObject);
         Color c = Color.white;
         foreach (MeshRenderer m in GetComponents<MeshRenderer>())
         {
