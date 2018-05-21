@@ -39,10 +39,18 @@ public class AIFollowingPath : BaseAI
                 TargetPoint = TargetPoint.Next;
 
                 if (TargetPoint != null)
-                    MovePosition = TargetPoint.transform.position;
                 {
+                    MovePosition = TargetPoint.transform.position;
+                }
+                else
+                {
+                    Debug.Log("Reached End");
                     if (OnReachTarget != null)
+                    {
                         OnReachTarget();
+                        OnReachTarget = null;
+                    }                        
+                    Destroy(gameObject);
                 }
             }
         }

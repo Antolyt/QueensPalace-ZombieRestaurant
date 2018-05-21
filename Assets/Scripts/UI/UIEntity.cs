@@ -43,7 +43,7 @@ public class UIEntity : MonoBehaviour
             int ammo = _weapon.Weapon.Attr.Ammo;
             int maxAmmo = _weapon.Weapon.Attr.Ammo;
 
-            GUI.Box(new Rect(targetPos.x, targetPos.y - MaxLength / 2, healthBarLength, 20), _weapon.Weapon.Attr.Ammo + "/" + _weapon.Weapon.Attr.MaxAmmo);
+            GUI.Box(new Rect(targetPos.x, targetPos.y - MaxLength / 2, MaxLength, 20), _weapon.Weapon.Attr.Ammo + "/" + _weapon.Weapon.Attr.MaxAmmo);
         }
     }
 

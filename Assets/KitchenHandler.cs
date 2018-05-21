@@ -28,7 +28,7 @@ public class KitchenHandler : MonoBehaviour {
             other.GetComponent<WeaponHandler>().enabled = false;
             other.GetComponent<CarrayObject>().enabled = true;
             if (!other.GetComponent<CarrayObject>().IsEmpty())
-                other.GetComponent<CarrayObject>().Hide(false);
+                other.GetComponent<CarrayObject>().Hide(true);
             SetWapons(false, other);
             other.GetComponent<Animator>().SetBool("IsInKitchen", true);
             Debug.Log("Entetr Kitchen");
@@ -40,7 +40,7 @@ public class KitchenHandler : MonoBehaviour {
         {
             other.GetComponent<WeaponHandler>().enabled = true;
             if (!other.GetComponent<CarrayObject>().IsEmpty())
-                other.GetComponent<CarrayObject>().Hide(true);
+                other.GetComponent<CarrayObject>().Hide(false);
             SetWapons(true, other);
             other.transform.GetChild(0).gameObject.SetActive(true);
             Debug.Log("Exit Kitchen");
