@@ -44,8 +44,13 @@ public class PlayerMovement : MonoBehaviour
                 _animator.SetBool("Walk", false);
         }
 
-        dir = new Vector3(Input.GetAxis(_inputPrefix + "Horizontal2"), 0, Input.GetAxis(_inputPrefix + "Vertical2"));
-        if (!dir.Equals(Vector3.zero))
+        Vector3 prefDir = new Vector3(Input.GetAxis(_inputPrefix + "Horizontal2"), 0, Input.GetAxis(_inputPrefix + "Vertical2"));
+        if (!prefDir.Equals(Vector3.zero))
+        {
+            transform.rotation = Quaternion.LookRotation(prefDir);
+            transform.Rotate(new Vector3(0, 90, 0));
+        }
+        else if(!dir.Equals(Vector3.zero))
         {
             transform.rotation = Quaternion.LookRotation(dir);
             transform.Rotate(new Vector3(0, 90, 0));
