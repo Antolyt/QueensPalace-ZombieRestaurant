@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Memory : MonoBehaviour {
+    public GameObject bullet;
+
     public FootTransformer[] bodyParts = null;
     private Dictionary<Type, WeaponAttribute> _weaponDictionary = new Dictionary<Type, WeaponAttribute>();
     private Dictionary<Type, BulletAttribute> _bulletDictionary = new Dictionary<Type, BulletAttribute>();
@@ -18,7 +20,7 @@ public class Memory : MonoBehaviour {
             MaxAmmo = 8,
             ShootDelay = 0.3f,
             Bullet = typeof(SimpleBullet),
-            GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
+            GameObject = bullet,
             SprayAngle = 10,
             AmountShootBullets = 1,
             Force = 60
@@ -29,7 +31,7 @@ public class Memory : MonoBehaviour {
             MaxAmmo = 30,
             ShootDelay = 0.05f,
             Bullet = typeof(SimpleBullet),
-            GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
+            GameObject = bullet,
             AmountShootBullets = 1,
             SprayAngle = 5,
             Force = 20
@@ -40,7 +42,7 @@ public class Memory : MonoBehaviour {
             MaxAmmo = 32,
             ShootDelay = 0.4f,
             Bullet = typeof(ShotgunBullet),
-            GameObject = (GameObject)Resources.Load("Bullets/SimpleBullet"),
+            GameObject = bullet,
             AmountShootBullets = 8,
             SprayAngle = 15,
             Force = 10

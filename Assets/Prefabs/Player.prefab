@@ -765,12 +765,12 @@ Rigidbody:
   m_GameObject: {fileID: 1556845243112306}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
+  m_Drag: 5
   m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65926137701975210
 BoxCollider:
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _memory: {fileID: 0}
-  _input: {fileID: 0}
+  _input: {fileID: 114756925892445966}
   hanHanApi: {fileID: 114948145179266808}
 --- !u!114 &114134927113250798
 MonoBehaviour:
@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _memory: {fileID: 0}
-  _input: {fileID: 0}
+  _input: {fileID: 114756925892445966}
   hanHanApi: {fileID: 114948145179266808}
 --- !u!114 &114637819466138490
 MonoBehaviour:
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _memory: {fileID: 0}
-  _input: {fileID: 0}
+  _input: {fileID: 114756925892445966}
   hanHanApi: {fileID: 114948145179266808}
 --- !u!114 &114882523123897128
 MonoBehaviour:

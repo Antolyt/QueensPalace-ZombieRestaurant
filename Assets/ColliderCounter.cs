@@ -26,7 +26,6 @@ public class ColliderCounter : MonoBehaviour {
             _collTrash--;
         if (_collPlace < 0 || _collWork < 0 || _collTrash < 0)
             Debug.LogError("negativ Collision Counter");
-        Debug.Log("Work: " + _collWork.ToString() + "\nPlace: " + _collPlace.ToString() + "-" + _collTrash.ToString());
     }
     // Use this for initialization
     void Start () {
