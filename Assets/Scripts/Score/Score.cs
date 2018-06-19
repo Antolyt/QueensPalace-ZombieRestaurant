@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
     public Text scoreText;
     public Text singleScoreText;
     public static int score;
+    public const int receiptScoreMultiplier = 10;
 
     public ScorePresenter scorePresenter;
 
@@ -15,9 +16,6 @@ public class Score : MonoBehaviour
         
     }
 
-    /// <summary>
-    /// Wait till 3 Couds are spawn and set random one as quest
-    /// </summary>
     void Update()
     {
 

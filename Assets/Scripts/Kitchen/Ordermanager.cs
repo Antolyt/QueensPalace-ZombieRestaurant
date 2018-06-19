@@ -26,6 +26,7 @@ public class Ordermanager : MonoBehaviour {
             else if (o.IsValid(foods))
             {
                 Destroy(o.gameObject);
+                Score.score += Score.receiptScoreMultiplier * o.numFoots * o.numFoots;
                 de = o;
                 Debug.Log("Richtiges Esssen");
                 finish = true;
